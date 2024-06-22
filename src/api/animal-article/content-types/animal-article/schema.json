@@ -1,0 +1,35 @@
+{
+  "kind": "collectionType",
+  "collectionName": "animal_articles",
+  "info": {
+    "singularName": "animal-article",
+    "pluralName": "animal-articles",
+    "displayName": "Tierartikel",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "animals": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::animal.animal",
+      "mappedBy": "animal_article"
+    },
+    "sections": {
+      "type": "dynamiczone",
+      "components": [
+        "article-section.text-with-image-section",
+        "article-section.text",
+        "article-section.text-with-gallery",
+        "article-section.image",
+        "article-section.hero"
+      ]
+    }
+  }
+}

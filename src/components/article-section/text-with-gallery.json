@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_article_section_text_with_galleries",
+  "info": {
+    "displayName": "textWithGallery",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "gallery": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "textBlocks": {
+      "type": "blocks"
+    },
+    "title": {
+      "type": "string"
+    }
+  }
+}

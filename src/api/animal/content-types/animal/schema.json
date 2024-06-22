@@ -1,0 +1,70 @@
+{
+  "kind": "collectionType",
+  "collectionName": "animals",
+  "info": {
+    "singularName": "animal",
+    "pluralName": "animals",
+    "displayName": "Tier",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "gender": {
+      "type": "enumeration",
+      "enum": [
+        "male",
+        "female",
+        "other"
+      ],
+      "required": true
+    },
+    "birthday": {
+      "type": "date"
+    },
+    "thumbnail": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "animal_article": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::animal-article.animal-article",
+      "inversedBy": "animals"
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    },
+    "emergency": {
+      "type": "boolean",
+      "default": false
+    },
+    "inGermany": {
+      "type": "boolean",
+      "default": false
+    },
+    "shoulderHeightCm": {
+      "type": "integer"
+    },
+    "castrated": {
+      "type": "boolean"
+    },
+    "animalKind": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::animal-kind.animal-kind",
+      "inversedBy": "animals"
+    }
+  }
+}

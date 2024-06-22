@@ -1,0 +1,30 @@
+{
+  "kind": "singleType",
+  "collectionName": "homes",
+  "info": {
+    "singularName": "home",
+    "pluralName": "homes",
+    "displayName": "home",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "bannerText": {
+      "type": "text"
+    },
+    "article": {
+      "type": "dynamiczone",
+      "components": [
+        "article-section.text-with-gallery",
+        "article-section.text-with-image-section",
+        "article-section.text",
+        "article-section.image",
+        "article-section.hero"
+      ],
+      "required": true
+    }
+  }
+}

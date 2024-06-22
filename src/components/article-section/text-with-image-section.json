@@ -1,0 +1,36 @@
+{
+  "collectionName": "components_article_section_text_with_image_sections",
+  "info": {
+    "displayName": "textWithImage",
+    "icon": "apps",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "text": {
+      "type": "blocks"
+    },
+    "images": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "imagePosition": {
+      "type": "enumeration",
+      "enum": [
+        "oben",
+        "rechts",
+        "links",
+        "unten"
+      ],
+      "default": "rechts",
+      "required": true
+    },
+    "title": {
+      "type": "string"
+    }
+  }
+}
