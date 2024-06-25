@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "footer_banners",
+  "info": {
+    "singularName": "footer-banner",
+    "pluralName": "footer-banners",
+    "displayName": "footerBanner"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "background": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    },
+    "article": {
+      "type": "dynamiczone",
+      "components": [
+        "article-section.button-link",
+        "article-section.text",
+        "article-section.row-start"
+      ]
+    }
+  }
+}

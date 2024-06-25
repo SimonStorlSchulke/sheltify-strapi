@@ -2,7 +2,7 @@
   "collectionName": "components_article_section_text_with_image_sections",
   "info": {
     "displayName": "textWithImage",
-    "icon": "apps",
+    "icon": "picture",
     "description": ""
   },
   "options": {},
@@ -31,6 +31,11 @@
     },
     "title": {
       "type": "string"
+    },
+    "background": {
+      "type": "boolean",
+      "default": false,
+      "required": true
     }
   }
 }

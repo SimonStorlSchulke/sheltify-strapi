@@ -26,9 +26,11 @@
       "components": [
         "article-section.text-with-image-section",
         "article-section.text",
-        "article-section.text-with-gallery",
         "article-section.image",
-        "article-section.hero"
+        "article-section.hero",
+        "article-section.animal-cards",
+        "article-section.button-link",
+        "article-section.row-start"
       ]
     }
   }

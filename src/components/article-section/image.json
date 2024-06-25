@@ -2,7 +2,8 @@
   "collectionName": "components_article_section_images",
   "info": {
     "displayName": "image",
-    "description": ""
+    "description": "",
+    "icon": "picture"
   },
   "options": {},
   "attributes": {
@@ -16,6 +17,11 @@
     },
     "title": {
       "type": "string"
+    },
+    "background": {
+      "type": "boolean",
+      "default": false,
+      "required": true
     }
   }
 }

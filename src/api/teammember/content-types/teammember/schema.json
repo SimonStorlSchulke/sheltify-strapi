@@ -1,0 +1,40 @@
+{
+  "kind": "collectionType",
+  "collectionName": "teammembers",
+  "info": {
+    "singularName": "teammember",
+    "pluralName": "teammembers",
+    "displayName": "Teammember"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "role": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "string",
+      "required": true
+    },
+    "image": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "mail": {
+      "type": "email"
+    },
+    "phone": {
+      "type": "string"
+    }
+  }
+}

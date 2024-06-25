@@ -18,13 +18,23 @@
     "article": {
       "type": "dynamiczone",
       "components": [
-        "article-section.text-with-gallery",
         "article-section.text-with-image-section",
         "article-section.text",
         "article-section.image",
-        "article-section.hero"
+        "article-section.hero",
+        "article-section.animal-cards",
+        "article-section.button-link",
+        "article-section.row-start"
       ],
       "required": true
+    },
+    "hero": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
     }
   }
 }

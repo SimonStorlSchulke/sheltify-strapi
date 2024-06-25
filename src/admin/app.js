@@ -1,4 +1,5 @@
 const config = {
+  locales: ["de"],
   theme: {
     colors: {
       alternative100: '#f6ecfc',

@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_article_section_row_starts",
+  "info": {
+    "displayName": "rowStart",
+    "description": "",
+    "icon": "apps"
+  },
+  "options": {},
+  "attributes": {
+    "columns": {
+      "type": "integer",
+      "max": 4,
+      "min": 1,
+      "default": 6
+    },
+    "title": {
+      "type": "string"
+    },
+    "textCentered": {
+      "type": "boolean",
+      "default": true,
+      "required": true
+    }
+  }
+}
