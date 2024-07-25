@@ -1,13 +1,13 @@
 {
-  "collectionName": "components_article_section_texts",
+  "collectionName": "components_article_section_section_starts",
   "info": {
-    "displayName": "text",
+    "displayName": "SectionStart",
     "description": ""
   },
   "options": {},
   "attributes": {
-    "text": {
-      "type": "blocks"
+    "title": {
+      "type": "string"
     },
     "background": {
       "type": "boolean",

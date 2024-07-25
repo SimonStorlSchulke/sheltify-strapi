@@ -13,9 +13,6 @@
       "min": 1,
       "default": 6
     },
-    "title": {
-      "type": "string"
-    },
     "textCentered": {
       "type": "boolean",
       "default": true,

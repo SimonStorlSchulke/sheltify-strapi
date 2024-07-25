@@ -24,7 +24,9 @@
         "article-section.hero",
         "article-section.animal-cards",
         "article-section.button-link",
-        "article-section.row-start"
+        "article-section.row-start",
+        "article-section.section-start",
+        "article-section.news-cards"
       ],
       "required": true
     },

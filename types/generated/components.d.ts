@@ -15,7 +15,6 @@ export interface ArticleSectionAnimalCards extends Schema.Component {
     >;
     queryFilter: Attribute.String;
     filteredAmount: Attribute.Integer;
-    title: Attribute.String;
     background: Attribute.Boolean &
       Attribute.Required &
       Attribute.DefaultTo<false>;
@@ -50,7 +49,6 @@ export interface ArticleSectionHero extends Schema.Component {
   };
   attributes: {
     hero: Attribute.Media<"images"> & Attribute.Required;
-    title: Attribute.String;
   };
 }
 
@@ -63,7 +61,30 @@ export interface ArticleSectionImage extends Schema.Component {
   };
   attributes: {
     images: Attribute.Media<"images", true>;
-    title: Attribute.String;
+    background: Attribute.Boolean &
+      Attribute.Required &
+      Attribute.DefaultTo<false>;
+  };
+}
+
+export interface ArticleSectionNewsCards extends Schema.Component {
+  collectionName: "components_article_section_news_cards";
+  info: {
+    displayName: "NewsCards";
+    description: "";
+  };
+  attributes: {
+    type: Attribute.Enumeration<["news", "blog"]>;
+    amount: Attribute.Integer &
+      Attribute.Required &
+      Attribute.SetMinMax<
+        {
+          min: 1;
+          max: 20;
+        },
+        number
+      > &
+      Attribute.DefaultTo<3>;
     background: Attribute.Boolean &
       Attribute.Required &
       Attribute.DefaultTo<false>;
@@ -87,10 +108,23 @@ export interface ArticleSectionRowStart extends Schema.Component {
         number
       > &
       Attribute.DefaultTo<6>;
-    title: Attribute.String;
     textCentered: Attribute.Boolean &
       Attribute.Required &
       Attribute.DefaultTo<true>;
+  };
+}
+
+export interface ArticleSectionSectionStart extends Schema.Component {
+  collectionName: "components_article_section_section_starts";
+  info: {
+    displayName: "SectionStart";
+    description: "";
+  };
+  attributes: {
+    title: Attribute.String;
+    background: Attribute.Boolean &
+      Attribute.Required &
+      Attribute.DefaultTo<false>;
   };
 }
 
@@ -107,7 +141,6 @@ export interface ArticleSectionTextWithImageSection extends Schema.Component {
     imagePosition: Attribute.Enumeration<["oben", "rechts", "links", "unten"]> &
       Attribute.Required &
       Attribute.DefaultTo<"rechts">;
-    title: Attribute.String;
     background: Attribute.Boolean &
       Attribute.Required &
       Attribute.DefaultTo<false>;
@@ -122,7 +155,6 @@ export interface ArticleSectionText extends Schema.Component {
   };
   attributes: {
     text: Attribute.Blocks;
-    title: Attribute.String;
     background: Attribute.Boolean &
       Attribute.Required &
       Attribute.DefaultTo<false>;
@@ -136,7 +168,9 @@ declare module "@strapi/types" {
       "article-section.button-link": ArticleSectionButtonLink;
       "article-section.hero": ArticleSectionHero;
       "article-section.image": ArticleSectionImage;
+      "article-section.news-cards": ArticleSectionNewsCards;
       "article-section.row-start": ArticleSectionRowStart;
+      "article-section.section-start": ArticleSectionSectionStart;
       "article-section.text-with-image-section": ArticleSectionTextWithImageSection;
       "article-section.text": ArticleSectionText;
     }

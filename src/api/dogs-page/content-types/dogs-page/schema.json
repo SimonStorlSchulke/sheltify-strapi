@@ -4,7 +4,8 @@
   "info": {
     "singularName": "dogs-page",
     "pluralName": "dogs-pages",
-    "displayName": "dogs-page"
+    "displayName": "dogs-page",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -12,11 +13,12 @@
   "pluginOptions": {},
   "attributes": {
     "hero": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     },
     "article": {
       "type": "dynamiczone",
@@ -27,7 +29,8 @@
         "article-section.image",
         "article-section.row-start",
         "article-section.text-with-image-section",
-        "article-section.text"
+        "article-section.text",
+        "article-section.section-start"
       ]
     }
   }

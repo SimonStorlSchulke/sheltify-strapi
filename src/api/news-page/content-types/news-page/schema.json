@@ -29,7 +29,8 @@
         "article-section.image",
         "article-section.row-start",
         "article-section.text-with-image-section",
-        "article-section.text"
+        "article-section.text",
+        "article-section.section-start"
       ]
     }
   }

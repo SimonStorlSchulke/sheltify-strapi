@@ -809,7 +809,8 @@ export interface ApiAboutPageAboutPage extends Schema.SingleType {
         "article-section.text",
         "article-section.animal-cards",
         "article-section.button-link",
-        "article-section.row-start"
+        "article-section.row-start",
+        "article-section.section-start"
       ]
     > &
       Attribute.Required;
@@ -853,7 +854,11 @@ export interface ApiAnimalAnimal extends Schema.CollectionType {
       "manyToOne",
       "api::animal-article.animal-article"
     >;
-    description: Attribute.Text & Attribute.Required;
+    description: Attribute.Text &
+      Attribute.Required &
+      Attribute.SetMinMaxLength<{
+        maxLength: 280;
+      }>;
     emergency: Attribute.Boolean & Attribute.DefaultTo<false>;
     inGermany: Attribute.Boolean & Attribute.DefaultTo<false>;
     shoulderHeightCm: Attribute.Integer;
@@ -863,6 +868,9 @@ export interface ApiAnimalAnimal extends Schema.CollectionType {
       "manyToOne",
       "api::animal-kind.animal-kind"
     >;
+    diseases: Attribute.String;
+    tolerating: Attribute.String;
+    suitedFor: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -907,7 +915,8 @@ export interface ApiAnimalArticleAnimalArticle extends Schema.CollectionType {
         "article-section.hero",
         "article-section.animal-cards",
         "article-section.button-link",
-        "article-section.row-start"
+        "article-section.row-start",
+        "article-section.section-start"
       ]
     >;
     createdAt: Attribute.DateTime;
@@ -984,7 +993,8 @@ export interface ApiAnimalsPageAnimalsPage extends Schema.SingleType {
         "article-section.animal-cards",
         "article-section.button-link",
         "article-section.hero",
-        "article-section.row-start"
+        "article-section.row-start",
+        "article-section.section-start"
       ]
     >;
     createdAt: Attribute.DateTime;
@@ -1063,7 +1073,8 @@ export interface ApiContactPageContactPage extends Schema.SingleType {
         "article-section.image",
         "article-section.row-start",
         "article-section.text-with-image-section",
-        "article-section.text"
+        "article-section.text",
+        "article-section.section-start"
       ]
     >;
     mail: Attribute.String;
@@ -1093,6 +1104,7 @@ export interface ApiDogsPageDogsPage extends Schema.SingleType {
     singularName: "dogs-page";
     pluralName: "dogs-pages";
     displayName: "dogs-page";
+    description: "";
   };
   options: {
     draftAndPublish: true;
@@ -1107,7 +1119,8 @@ export interface ApiDogsPageDogsPage extends Schema.SingleType {
         "article-section.image",
         "article-section.row-start",
         "article-section.text-with-image-section",
-        "article-section.text"
+        "article-section.text",
+        "article-section.section-start"
       ]
     >;
     createdAt: Attribute.DateTime;
@@ -1171,6 +1184,7 @@ export interface ApiHelpPageHelpPage extends Schema.SingleType {
     singularName: "help-page";
     pluralName: "help-pages";
     displayName: "help-page";
+    description: "";
   };
   options: {
     draftAndPublish: true;
@@ -1185,7 +1199,8 @@ export interface ApiHelpPageHelpPage extends Schema.SingleType {
         "article-section.image",
         "article-section.row-start",
         "article-section.text-with-image-section",
-        "article-section.text"
+        "article-section.text",
+        "article-section.section-start"
       ]
     >;
     createdAt: Attribute.DateTime;
@@ -1227,7 +1242,9 @@ export interface ApiHomeHome extends Schema.SingleType {
         "article-section.hero",
         "article-section.animal-cards",
         "article-section.button-link",
-        "article-section.row-start"
+        "article-section.row-start",
+        "article-section.section-start",
+        "article-section.news-cards"
       ]
     > &
       Attribute.Required;
@@ -1293,7 +1310,8 @@ export interface ApiNewsPageNewsPage extends Schema.SingleType {
         "article-section.image",
         "article-section.row-start",
         "article-section.text-with-image-section",
-        "article-section.text"
+        "article-section.text",
+        "article-section.section-start"
       ]
     >;
     createdAt: Attribute.DateTime;
@@ -1314,12 +1332,51 @@ export interface ApiNewsPageNewsPage extends Schema.SingleType {
   };
 }
 
+export interface ApiSubmissionSubmission extends Schema.CollectionType {
+  collectionName: "submissions";
+  info: {
+    singularName: "submission";
+    pluralName: "submissions";
+    displayName: "Formulare";
+    description: "";
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    name: Attribute.String & Attribute.Required;
+    mail: Attribute.String & Attribute.Required;
+    type: Attribute.Enumeration<["bewerbung", "anderes"]>;
+    context: Attribute.String & Attribute.Required;
+    phone: Attribute.String;
+    message: Attribute.Text & Attribute.Required;
+    done: Attribute.Boolean & Attribute.DefaultTo<false>;
+    internalComment: Attribute.Text;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      "api::submission.submission",
+      "oneToOne",
+      "admin::user"
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      "api::submission.submission",
+      "oneToOne",
+      "admin::user"
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiTeammemberTeammember extends Schema.CollectionType {
   collectionName: "teammembers";
   info: {
     singularName: "teammember";
     pluralName: "teammembers";
-    displayName: "Teammember";
+    displayName: "Teammitglied";
+    description: "";
   };
   options: {
     draftAndPublish: true;
@@ -1380,6 +1437,7 @@ declare module "@strapi/types" {
       "api::home.home": ApiHomeHome;
       "api::imprint.imprint": ApiImprintImprint;
       "api::news-page.news-page": ApiNewsPageNewsPage;
+      "api::submission.submission": ApiSubmissionSubmission;
       "api::teammember.teammember": ApiTeammemberTeammember;
     }
   }

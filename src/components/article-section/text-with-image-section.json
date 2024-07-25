@@ -29,9 +29,6 @@
       "default": "rechts",
       "required": true
     },
-    "title": {
-      "type": "string"
-    },
     "background": {
       "type": "boolean",
       "default": false,

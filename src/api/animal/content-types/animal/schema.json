@@ -44,7 +44,8 @@
     },
     "description": {
       "type": "text",
-      "required": true
+      "required": true,
+      "maxLength": 280
     },
     "emergency": {
       "type": "boolean",
@@ -65,6 +66,15 @@
       "relation": "manyToOne",
       "target": "api::animal-kind.animal-kind",
       "inversedBy": "animals"
+    },
+    "diseases": {
+      "type": "string"
+    },
+    "tolerating": {
+      "type": "string"
+    },
+    "suitedFor": {
+      "type": "string"
     }
   }
 }

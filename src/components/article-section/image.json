@@ -15,9 +15,6 @@
         "images"
       ]
     },
-    "title": {
-      "type": "string"
-    },
     "background": {
       "type": "boolean",
       "default": false,

@@ -29,7 +29,8 @@
         "article-section.animal-cards",
         "article-section.button-link",
         "article-section.hero",
-        "article-section.row-start"
+        "article-section.row-start",
+        "article-section.section-start"
       ]
     }
   }
