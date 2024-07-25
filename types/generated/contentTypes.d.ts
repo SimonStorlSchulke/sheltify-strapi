@@ -793,7 +793,7 @@ export interface ApiAboutPageAboutPage extends Schema.SingleType {
   info: {
     singularName: "about-page";
     pluralName: "about-pages";
-    displayName: "about-page";
+    displayName: "\u00DCber uns";
     description: "";
   };
   options: {
@@ -972,49 +972,6 @@ export interface ApiAnimalKindAnimalKind extends Schema.CollectionType {
   };
 }
 
-export interface ApiAnimalsPageAnimalsPage extends Schema.SingleType {
-  collectionName: "animals_pages";
-  info: {
-    singularName: "animals-page";
-    pluralName: "animals-pages";
-    displayName: "animals-page";
-    description: "";
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    hero: Attribute.Media<"images", true> & Attribute.Required;
-    article: Attribute.DynamicZone<
-      [
-        "article-section.image",
-        "article-section.text-with-image-section",
-        "article-section.text",
-        "article-section.animal-cards",
-        "article-section.button-link",
-        "article-section.hero",
-        "article-section.row-start",
-        "article-section.section-start"
-      ]
-    >;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      "api::animals-page.animals-page",
-      "oneToOne",
-      "admin::user"
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      "api::animals-page.animals-page",
-      "oneToOne",
-      "admin::user"
-    > &
-      Attribute.Private;
-  };
-}
-
 export interface ApiBlogBlog extends Schema.CollectionType {
   collectionName: "blogs";
   info: {
@@ -1058,7 +1015,7 @@ export interface ApiContactPageContactPage extends Schema.SingleType {
   info: {
     singularName: "contact-page";
     pluralName: "contact-pages";
-    displayName: "contact-page";
+    displayName: "Kontakt";
     description: "";
   };
   options: {
@@ -1098,12 +1055,57 @@ export interface ApiContactPageContactPage extends Schema.SingleType {
   };
 }
 
+export interface ApiConveyConvey extends Schema.SingleType {
+  collectionName: "conveys";
+  info: {
+    singularName: "convey";
+    pluralName: "conveys";
+    displayName: "Vermittlung";
+    description: "";
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    hero: Attribute.Media<"images">;
+    article: Attribute.DynamicZone<
+      [
+        "article-section.animal-cards",
+        "article-section.button-link",
+        "article-section.hero",
+        "article-section.image",
+        "article-section.news-cards",
+        "article-section.row-start",
+        "article-section.section-start",
+        "article-section.text-with-image-section",
+        "article-section.text"
+      ]
+    > &
+      Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      "api::convey.convey",
+      "oneToOne",
+      "admin::user"
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      "api::convey.convey",
+      "oneToOne",
+      "admin::user"
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiDogsPageDogsPage extends Schema.SingleType {
   collectionName: "dogs_pages";
   info: {
     singularName: "dogs-page";
     pluralName: "dogs-pages";
-    displayName: "dogs-page";
+    displayName: "Hunde";
     description: "";
   };
   options: {
@@ -1183,7 +1185,7 @@ export interface ApiHelpPageHelpPage extends Schema.SingleType {
   info: {
     singularName: "help-page";
     pluralName: "help-pages";
-    displayName: "help-page";
+    displayName: "Helfen";
     description: "";
   };
   options: {
@@ -1226,14 +1228,13 @@ export interface ApiHomeHome extends Schema.SingleType {
   info: {
     singularName: "home";
     pluralName: "homes";
-    displayName: "home";
+    displayName: "Startseite";
     description: "";
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-    bannerText: Attribute.Text;
     article: Attribute.DynamicZone<
       [
         "article-section.text-with-image-section",
@@ -1264,7 +1265,8 @@ export interface ApiImprintImprint extends Schema.SingleType {
   info: {
     singularName: "imprint";
     pluralName: "imprints";
-    displayName: "imprint";
+    displayName: "Impressum";
+    description: "";
   };
   options: {
     draftAndPublish: true;
@@ -1294,7 +1296,7 @@ export interface ApiNewsPageNewsPage extends Schema.SingleType {
   info: {
     singularName: "news-page";
     pluralName: "news-pages";
-    displayName: "news-page";
+    displayName: "News & Wissen";
     description: "";
   };
   options: {
@@ -1428,9 +1430,9 @@ declare module "@strapi/types" {
       "api::animal.animal": ApiAnimalAnimal;
       "api::animal-article.animal-article": ApiAnimalArticleAnimalArticle;
       "api::animal-kind.animal-kind": ApiAnimalKindAnimalKind;
-      "api::animals-page.animals-page": ApiAnimalsPageAnimalsPage;
       "api::blog.blog": ApiBlogBlog;
       "api::contact-page.contact-page": ApiContactPageContactPage;
+      "api::convey.convey": ApiConveyConvey;
       "api::dogs-page.dogs-page": ApiDogsPageDogsPage;
       "api::footer-banner.footer-banner": ApiFooterBannerFooterBanner;
       "api::help-page.help-page": ApiHelpPageHelpPage;

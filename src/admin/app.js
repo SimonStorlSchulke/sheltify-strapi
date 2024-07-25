@@ -49,6 +49,12 @@ const config = {
       warning700: '#be5d01',
     }
   },
+  translations: {
+    de: {
+      "app.components.LeftMenu.navbrand.title": "Herzenshunde Admin",
+      "content-manager.components.LeftMenu.single-types": "Seiten",
+    }
+  }
 };
 
 const bootstrap = (app) => {

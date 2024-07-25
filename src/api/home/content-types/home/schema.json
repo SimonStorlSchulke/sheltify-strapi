@@ -4,7 +4,7 @@
   "info": {
     "singularName": "home",
     "pluralName": "homes",
-    "displayName": "home",
+    "displayName": "Startseite",
     "description": ""
   },
   "options": {
@@ -12,9 +12,6 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "bannerText": {
-      "type": "text"
-    },
     "article": {
       "type": "dynamiczone",
       "components": [

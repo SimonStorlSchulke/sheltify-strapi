@@ -1,10 +1,10 @@
 {
   "kind": "singleType",
-  "collectionName": "animals_pages",
+  "collectionName": "conveys",
   "info": {
-    "singularName": "animals-page",
-    "pluralName": "animals-pages",
-    "displayName": "animals-page",
+    "singularName": "convey",
+    "pluralName": "conveys",
+    "displayName": "Vermittlung",
     "description": ""
   },
   "options": {
@@ -14,8 +14,8 @@
   "attributes": {
     "hero": {
       "type": "media",
-      "multiple": true,
-      "required": true,
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images"
       ]
@@ -23,15 +23,17 @@
     "article": {
       "type": "dynamiczone",
       "components": [
-        "article-section.image",
-        "article-section.text-with-image-section",
-        "article-section.text",
         "article-section.animal-cards",
         "article-section.button-link",
         "article-section.hero",
+        "article-section.image",
+        "article-section.news-cards",
         "article-section.row-start",
-        "article-section.section-start"
-      ]
+        "article-section.section-start",
+        "article-section.text-with-image-section",
+        "article-section.text"
+      ],
+      "required": true
     }
   }
 }
