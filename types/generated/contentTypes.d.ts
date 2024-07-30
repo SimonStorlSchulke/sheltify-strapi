@@ -977,7 +977,7 @@ export interface ApiBlogBlog extends Schema.CollectionType {
   info: {
     singularName: "blog";
     pluralName: "blogs";
-    displayName: "blog";
+    displayName: "Blogeintrag";
     description: "";
   };
   options: {
@@ -1148,7 +1148,8 @@ export interface ApiFooterBannerFooterBanner extends Schema.CollectionType {
   info: {
     singularName: "footer-banner";
     pluralName: "footer-banners";
-    displayName: "footerBanner";
+    displayName: "Footer-Banner";
+    description: "";
   };
   options: {
     draftAndPublish: true;
@@ -1334,44 +1335,6 @@ export interface ApiNewsPageNewsPage extends Schema.SingleType {
   };
 }
 
-export interface ApiSubmissionSubmission extends Schema.CollectionType {
-  collectionName: "submissions";
-  info: {
-    singularName: "submission";
-    pluralName: "submissions";
-    displayName: "Formulare";
-    description: "";
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    name: Attribute.String & Attribute.Required;
-    mail: Attribute.String & Attribute.Required;
-    type: Attribute.Enumeration<["bewerbung", "anderes"]>;
-    context: Attribute.String & Attribute.Required;
-    phone: Attribute.String;
-    message: Attribute.Text & Attribute.Required;
-    done: Attribute.Boolean & Attribute.DefaultTo<false>;
-    internalComment: Attribute.Text;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      "api::submission.submission",
-      "oneToOne",
-      "admin::user"
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      "api::submission.submission",
-      "oneToOne",
-      "admin::user"
-    > &
-      Attribute.Private;
-  };
-}
-
 export interface ApiTeammemberTeammember extends Schema.CollectionType {
   collectionName: "teammembers";
   info: {
@@ -1439,7 +1402,6 @@ declare module "@strapi/types" {
       "api::home.home": ApiHomeHome;
       "api::imprint.imprint": ApiImprintImprint;
       "api::news-page.news-page": ApiNewsPageNewsPage;
-      "api::submission.submission": ApiSubmissionSubmission;
       "api::teammember.teammember": ApiTeammemberTeammember;
     }
   }
