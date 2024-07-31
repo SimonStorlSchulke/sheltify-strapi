@@ -987,13 +987,15 @@ export interface ApiBlogBlog extends Schema.CollectionType {
     title: Attribute.String & Attribute.Required;
     artikel: Attribute.DynamicZone<
       [
+        "article-section.text-with-image-section",
+        "article-section.text",
         "article-section.animal-cards",
         "article-section.button-link",
         "article-section.hero",
         "article-section.image",
+        "article-section.news-cards",
         "article-section.row-start",
-        "article-section.text-with-image-section",
-        "article-section.text"
+        "article-section.section-start"
       ]
     > &
       Attribute.Required;

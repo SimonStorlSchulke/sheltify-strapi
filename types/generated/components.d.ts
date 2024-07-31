@@ -44,7 +44,7 @@ export interface ArticleSectionButtonLink extends Schema.Component {
 export interface ArticleSectionHero extends Schema.Component {
   collectionName: "components_article_section_heroes";
   info: {
-    displayName: "hero";
+    displayName: "Bild \u00FCber ganze Breite";
     description: "";
   };
   attributes: {
@@ -55,7 +55,7 @@ export interface ArticleSectionHero extends Schema.Component {
 export interface ArticleSectionImage extends Schema.Component {
   collectionName: "components_article_section_images";
   info: {
-    displayName: "image";
+    displayName: "Bild(er)";
     description: "";
     icon: "picture";
   };
@@ -117,7 +117,7 @@ export interface ArticleSectionRowStart extends Schema.Component {
 export interface ArticleSectionSectionStart extends Schema.Component {
   collectionName: "components_article_section_section_starts";
   info: {
-    displayName: "SectionStart";
+    displayName: "Abschnitts-Beginn";
     description: "";
   };
   attributes: {
@@ -131,7 +131,7 @@ export interface ArticleSectionSectionStart extends Schema.Component {
 export interface ArticleSectionTextWithImageSection extends Schema.Component {
   collectionName: "components_article_section_text_with_image_sections";
   info: {
-    displayName: "textWithImage";
+    displayName: " Text mit Bild(ern)";
     icon: "picture";
     description: "";
   };
@@ -150,8 +150,9 @@ export interface ArticleSectionTextWithImageSection extends Schema.Component {
 export interface ArticleSectionText extends Schema.Component {
   collectionName: "components_article_section_texts";
   info: {
-    displayName: "text";
+    displayName: " Text";
     description: "";
+    icon: "layer";
   };
   attributes: {
     text: Attribute.Blocks;

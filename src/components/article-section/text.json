@@ -1,8 +1,9 @@
 {
   "collectionName": "components_article_section_texts",
   "info": {
-    "displayName": "text",
-    "description": ""
+    "displayName": " Text",
+    "description": "",
+    "icon": "layer"
   },
   "options": {},
   "attributes": {
