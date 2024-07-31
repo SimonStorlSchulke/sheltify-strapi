@@ -1107,7 +1107,8 @@ export interface ApiConveySubpageConveySubpage extends Schema.CollectionType {
   info: {
     singularName: "convey-subpage";
     pluralName: "convey-subpages";
-    displayName: "convey-subpage";
+    displayName: "Unterseiten Vermittlung";
+    description: "";
   };
   options: {
     draftAndPublish: true;
@@ -1274,7 +1275,8 @@ export interface ApiHelpSubpageHelpSubpage extends Schema.CollectionType {
   info: {
     singularName: "help-subpage";
     pluralName: "help-subpages";
-    displayName: "help-subpage";
+    displayName: "Unterseiten Helfen";
+    description: "";
   };
   options: {
     draftAndPublish: true;

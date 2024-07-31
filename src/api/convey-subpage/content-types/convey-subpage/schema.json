@@ -4,7 +4,8 @@
   "info": {
     "singularName": "convey-subpage",
     "pluralName": "convey-subpages",
-    "displayName": "convey-subpage"
+    "displayName": "Unterseiten Vermittlung",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true

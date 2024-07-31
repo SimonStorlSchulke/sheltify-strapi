@@ -4,7 +4,8 @@
   "info": {
     "singularName": "help-subpage",
     "pluralName": "help-subpages",
-    "displayName": "help-subpage"
+    "displayName": "Unterseiten Helfen",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
