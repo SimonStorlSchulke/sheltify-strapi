@@ -33,6 +33,11 @@
       "type": "boolean",
       "default": false,
       "required": true
+    },
+    "gallery": {
+      "type": "boolean",
+      "default": true,
+      "required": true
     }
   }
 }

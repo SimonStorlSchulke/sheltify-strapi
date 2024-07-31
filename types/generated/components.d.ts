@@ -64,6 +64,9 @@ export interface ArticleSectionImage extends Schema.Component {
     background: Attribute.Boolean &
       Attribute.Required &
       Attribute.DefaultTo<false>;
+    gallery: Attribute.Boolean &
+      Attribute.Required &
+      Attribute.DefaultTo<false>;
   };
 }
 
@@ -144,6 +147,7 @@ export interface ArticleSectionTextWithImageSection extends Schema.Component {
     background: Attribute.Boolean &
       Attribute.Required &
       Attribute.DefaultTo<false>;
+    gallery: Attribute.Boolean & Attribute.Required & Attribute.DefaultTo<true>;
   };
 }
 
