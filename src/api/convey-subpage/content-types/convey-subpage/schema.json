@@ -29,6 +29,11 @@
         "article-section.text-with-image-section",
         "article-section.text"
       ]
+    },
+    "urlName": {
+      "type": "string",
+      "regex": "^[a-z-]+$",
+      "required": true
     }
   }
 }

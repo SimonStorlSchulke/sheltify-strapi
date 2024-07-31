@@ -75,6 +75,9 @@
     },
     "suitedFor": {
       "type": "string"
+    },
+    "paten": {
+      "type": "string"
     }
   }
 }

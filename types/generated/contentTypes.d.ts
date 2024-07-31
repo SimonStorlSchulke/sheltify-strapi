@@ -871,6 +871,7 @@ export interface ApiAnimalAnimal extends Schema.CollectionType {
     diseases: Attribute.String;
     tolerating: Attribute.String;
     suitedFor: Attribute.String;
+    paten: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1128,6 +1129,7 @@ export interface ApiConveySubpageConveySubpage extends Schema.CollectionType {
         "article-section.text"
       ]
     >;
+    urlName: Attribute.String & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1296,6 +1298,7 @@ export interface ApiHelpSubpageHelpSubpage extends Schema.CollectionType {
         "article-section.text"
       ]
     >;
+    urlName: Attribute.String & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
