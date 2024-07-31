@@ -1102,6 +1102,49 @@ export interface ApiConveyConvey extends Schema.SingleType {
   };
 }
 
+export interface ApiConveySubpageConveySubpage extends Schema.CollectionType {
+  collectionName: "convey_subpages";
+  info: {
+    singularName: "convey-subpage";
+    pluralName: "convey-subpages";
+    displayName: "convey-subpage";
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    name: Attribute.String & Attribute.Required;
+    article: Attribute.DynamicZone<
+      [
+        "article-section.animal-cards",
+        "article-section.button-link",
+        "article-section.hero",
+        "article-section.image",
+        "article-section.news-cards",
+        "article-section.row-start",
+        "article-section.section-start",
+        "article-section.text-with-image-section",
+        "article-section.text"
+      ]
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      "api::convey-subpage.convey-subpage",
+      "oneToOne",
+      "admin::user"
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      "api::convey-subpage.convey-subpage",
+      "oneToOne",
+      "admin::user"
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiDogsPageDogsPage extends Schema.SingleType {
   collectionName: "dogs_pages";
   info: {
@@ -1219,6 +1262,49 @@ export interface ApiHelpPageHelpPage extends Schema.SingleType {
       Attribute.Private;
     updatedBy: Attribute.Relation<
       "api::help-page.help-page",
+      "oneToOne",
+      "admin::user"
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiHelpSubpageHelpSubpage extends Schema.CollectionType {
+  collectionName: "help_subpages";
+  info: {
+    singularName: "help-subpage";
+    pluralName: "help-subpages";
+    displayName: "help-subpage";
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    name: Attribute.String & Attribute.Required;
+    article: Attribute.DynamicZone<
+      [
+        "article-section.animal-cards",
+        "article-section.button-link",
+        "article-section.hero",
+        "article-section.image",
+        "article-section.news-cards",
+        "article-section.row-start",
+        "article-section.section-start",
+        "article-section.text-with-image-section",
+        "article-section.text"
+      ]
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      "api::help-subpage.help-subpage",
+      "oneToOne",
+      "admin::user"
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      "api::help-subpage.help-subpage",
       "oneToOne",
       "admin::user"
     > &
@@ -1398,9 +1484,11 @@ declare module "@strapi/types" {
       "api::blog.blog": ApiBlogBlog;
       "api::contact-page.contact-page": ApiContactPageContactPage;
       "api::convey.convey": ApiConveyConvey;
+      "api::convey-subpage.convey-subpage": ApiConveySubpageConveySubpage;
       "api::dogs-page.dogs-page": ApiDogsPageDogsPage;
       "api::footer-banner.footer-banner": ApiFooterBannerFooterBanner;
       "api::help-page.help-page": ApiHelpPageHelpPage;
+      "api::help-subpage.help-subpage": ApiHelpSubpageHelpSubpage;
       "api::home.home": ApiHomeHome;
       "api::imprint.imprint": ApiImprintImprint;
       "api::news-page.news-page": ApiNewsPageNewsPage;
