@@ -77,6 +77,11 @@
     },
     "whereInGermany": {
       "type": "string"
+    },
+    "priority": {
+      "type": "integer",
+      "default": 0,
+      "required": true
     }
   }
 }
