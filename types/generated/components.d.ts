@@ -81,7 +81,7 @@ export interface ArticleSectionNewsCards extends Schema.Component {
 export interface ArticleSectionRowStart extends Schema.Component {
   collectionName: "components_article_section_row_starts";
   info: {
-    displayName: "rowStart";
+    displayName: "Spalten";
     description: "";
     icon: "apps";
   };
