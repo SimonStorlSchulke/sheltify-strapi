@@ -51,10 +51,6 @@
       "type": "boolean",
       "default": false
     },
-    "inGermany": {
-      "type": "boolean",
-      "default": false
-    },
     "shoulderHeightCm": {
       "type": "integer"
     },
@@ -77,6 +73,9 @@
       "type": "string"
     },
     "paten": {
+      "type": "string"
+    },
+    "whereInGermany": {
       "type": "string"
     }
   }

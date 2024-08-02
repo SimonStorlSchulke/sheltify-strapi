@@ -8,16 +8,10 @@ export interface ArticleSectionAnimalCards extends Schema.Component {
     icon: "apps";
   };
   attributes: {
-    animals: Attribute.Relation<
-      "article-section.animal-cards",
-      "oneToMany",
-      "api::animal.animal"
-    >;
+    animals: Attribute.Relation<"article-section.animal-cards", "oneToMany", "api::animal.animal">;
     queryFilter: Attribute.String;
     filteredAmount: Attribute.Integer;
-    background: Attribute.Boolean &
-      Attribute.Required &
-      Attribute.DefaultTo<false>;
+    background: Attribute.Boolean & Attribute.Required & Attribute.DefaultTo<false>;
     text: Attribute.Blocks;
   };
 }
@@ -32,12 +26,8 @@ export interface ArticleSectionButtonLink extends Schema.Component {
   attributes: {
     text: Attribute.String & Attribute.Required;
     link: Attribute.String & Attribute.Required;
-    type: Attribute.Enumeration<["primary", "secondary", "call-to-action"]> &
-      Attribute.Required &
-      Attribute.DefaultTo<"primary">;
-    background: Attribute.Boolean &
-      Attribute.Required &
-      Attribute.DefaultTo<false>;
+    type: Attribute.Enumeration<["primary", "secondary", "call-to-action"]> & Attribute.Required & Attribute.DefaultTo<"primary">;
+    background: Attribute.Boolean & Attribute.Required & Attribute.DefaultTo<false>;
   };
 }
 
@@ -61,12 +51,8 @@ export interface ArticleSectionImage extends Schema.Component {
   };
   attributes: {
     images: Attribute.Media<"images", true>;
-    background: Attribute.Boolean &
-      Attribute.Required &
-      Attribute.DefaultTo<false>;
-    gallery: Attribute.Boolean &
-      Attribute.Required &
-      Attribute.DefaultTo<false>;
+    background: Attribute.Boolean & Attribute.Required & Attribute.DefaultTo<false>;
+    gallery: Attribute.Boolean & Attribute.Required & Attribute.DefaultTo<false>;
   };
 }
 
@@ -88,9 +74,7 @@ export interface ArticleSectionNewsCards extends Schema.Component {
         number
       > &
       Attribute.DefaultTo<3>;
-    background: Attribute.Boolean &
-      Attribute.Required &
-      Attribute.DefaultTo<false>;
+    background: Attribute.Boolean & Attribute.Required & Attribute.DefaultTo<false>;
   };
 }
 
@@ -111,12 +95,8 @@ export interface ArticleSectionRowStart extends Schema.Component {
         number
       > &
       Attribute.DefaultTo<6>;
-    textCentered: Attribute.Boolean &
-      Attribute.Required &
-      Attribute.DefaultTo<true>;
-    background: Attribute.Boolean &
-      Attribute.Required &
-      Attribute.DefaultTo<false>;
+    textCentered: Attribute.Boolean & Attribute.Required & Attribute.DefaultTo<true>;
+    background: Attribute.Boolean & Attribute.Required & Attribute.DefaultTo<false>;
   };
 }
 
@@ -128,9 +108,7 @@ export interface ArticleSectionSectionStart extends Schema.Component {
   };
   attributes: {
     title: Attribute.String;
-    background: Attribute.Boolean &
-      Attribute.Required &
-      Attribute.DefaultTo<false>;
+    background: Attribute.Boolean & Attribute.Required & Attribute.DefaultTo<false>;
   };
 }
 
@@ -144,12 +122,8 @@ export interface ArticleSectionTextWithImageSection extends Schema.Component {
   attributes: {
     text: Attribute.Blocks;
     images: Attribute.Media<"images", true>;
-    imagePosition: Attribute.Enumeration<["oben", "rechts", "links", "unten"]> &
-      Attribute.Required &
-      Attribute.DefaultTo<"rechts">;
-    background: Attribute.Boolean &
-      Attribute.Required &
-      Attribute.DefaultTo<false>;
+    imagePosition: Attribute.Enumeration<["oben", "rechts", "links", "unten"]> & Attribute.Required & Attribute.DefaultTo<"rechts">;
+    background: Attribute.Boolean & Attribute.Required & Attribute.DefaultTo<false>;
     gallery: Attribute.Boolean & Attribute.Required & Attribute.DefaultTo<true>;
   };
 }
@@ -163,9 +137,7 @@ export interface ArticleSectionText extends Schema.Component {
   };
   attributes: {
     text: Attribute.Blocks;
-    background: Attribute.Boolean &
-      Attribute.Required &
-      Attribute.DefaultTo<false>;
+    background: Attribute.Boolean & Attribute.Required & Attribute.DefaultTo<false>;
   };
 }
 
