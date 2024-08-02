@@ -17,6 +17,11 @@
       "type": "boolean",
       "default": true,
       "required": true
+    },
+    "background": {
+      "type": "boolean",
+      "default": false,
+      "required": true
     }
   }
 }

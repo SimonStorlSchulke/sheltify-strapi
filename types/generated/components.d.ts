@@ -114,6 +114,9 @@ export interface ArticleSectionRowStart extends Schema.Component {
     textCentered: Attribute.Boolean &
       Attribute.Required &
       Attribute.DefaultTo<true>;
+    background: Attribute.Boolean &
+      Attribute.Required &
+      Attribute.DefaultTo<false>;
   };
 }
 
