@@ -1,7 +1,7 @@
 {
   "collectionName": "components_article_section_images",
   "info": {
-    "displayName": "Bild(er)",
+    "displayName": "Bild(er) oder Video",
     "description": "",
     "icon": "picture"
   },
@@ -12,7 +12,8 @@
       "multiple": true,
       "required": false,
       "allowedTypes": [
-        "images"
+        "images",
+        "videos"
       ]
     },
     "background": {

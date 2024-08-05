@@ -1,7 +1,7 @@
 {
   "collectionName": "components_article_section_text_with_image_sections",
   "info": {
-    "displayName": " Text mit Bild(ern)",
+    "displayName": " Text mit Bild(ern) oder Video",
     "icon": "picture",
     "description": ""
   },
@@ -15,7 +15,8 @@
       "multiple": true,
       "required": false,
       "allowedTypes": [
-        "images"
+        "images",
+        "videos"
       ]
     },
     "imagePosition": {

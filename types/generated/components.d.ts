@@ -45,12 +45,12 @@ export interface ArticleSectionHero extends Schema.Component {
 export interface ArticleSectionImage extends Schema.Component {
   collectionName: "components_article_section_images";
   info: {
-    displayName: "Bild(er)";
+    displayName: "Bild(er) oder Video";
     description: "";
     icon: "picture";
   };
   attributes: {
-    images: Attribute.Media<"images", true>;
+    images: Attribute.Media<"images" | "videos", true>;
     background: Attribute.Boolean & Attribute.Required & Attribute.DefaultTo<false>;
     gallery: Attribute.Boolean & Attribute.Required & Attribute.DefaultTo<false>;
   };
@@ -115,13 +115,13 @@ export interface ArticleSectionSectionStart extends Schema.Component {
 export interface ArticleSectionTextWithImageSection extends Schema.Component {
   collectionName: "components_article_section_text_with_image_sections";
   info: {
-    displayName: " Text mit Bild(ern)";
+    displayName: " Text mit Bild(ern) oder Video";
     icon: "picture";
     description: "";
   };
   attributes: {
     text: Attribute.Blocks;
-    images: Attribute.Media<"images", true>;
+    images: Attribute.Media<"images" | "videos", true>;
     imagePosition: Attribute.Enumeration<["oben", "rechts", "links", "unten"]> & Attribute.Required & Attribute.DefaultTo<"rechts">;
     background: Attribute.Boolean & Attribute.Required & Attribute.DefaultTo<false>;
     gallery: Attribute.Boolean & Attribute.Required & Attribute.DefaultTo<true>;
