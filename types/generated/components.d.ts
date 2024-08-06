@@ -11,8 +11,8 @@ export interface ArticleSectionAnimalCards extends Schema.Component {
     animals: Attribute.Relation<"article-section.animal-cards", "oneToMany", "api::animal.animal">;
     queryFilter: Attribute.String;
     filteredAmount: Attribute.Integer;
-    background: Attribute.Boolean & Attribute.Required & Attribute.DefaultTo<false>;
     text: Attribute.Blocks;
+    background: Attribute.Enumeration<["nein", "gr\u00FCn", "beige"]> & Attribute.DefaultTo<"nein">;
   };
 }
 
@@ -27,7 +27,7 @@ export interface ArticleSectionButtonLink extends Schema.Component {
     text: Attribute.String & Attribute.Required;
     link: Attribute.String & Attribute.Required;
     type: Attribute.Enumeration<["primary", "secondary", "call-to-action"]> & Attribute.Required & Attribute.DefaultTo<"primary">;
-    background: Attribute.Boolean & Attribute.Required & Attribute.DefaultTo<false>;
+    background: Attribute.Enumeration<["nein", "gr\u00FCn", "beige"]> & Attribute.DefaultTo<"nein">;
   };
 }
 
@@ -51,8 +51,8 @@ export interface ArticleSectionImage extends Schema.Component {
   };
   attributes: {
     images: Attribute.Media<"images" | "videos", true>;
-    background: Attribute.Boolean & Attribute.Required & Attribute.DefaultTo<false>;
     gallery: Attribute.Boolean & Attribute.Required & Attribute.DefaultTo<false>;
+    background: Attribute.Enumeration<["nein", "gr\u00FCn", "beige"]> & Attribute.DefaultTo<"nein">;
   };
 }
 
@@ -74,7 +74,7 @@ export interface ArticleSectionNewsCards extends Schema.Component {
         number
       > &
       Attribute.DefaultTo<3>;
-    background: Attribute.Boolean & Attribute.Required & Attribute.DefaultTo<false>;
+    background: Attribute.Enumeration<["nein", "gr\u00FCn", "beige"]> & Attribute.DefaultTo<"nein">;
   };
 }
 
@@ -96,7 +96,7 @@ export interface ArticleSectionRowStart extends Schema.Component {
       > &
       Attribute.DefaultTo<6>;
     textCentered: Attribute.Boolean & Attribute.Required & Attribute.DefaultTo<true>;
-    background: Attribute.Boolean & Attribute.Required & Attribute.DefaultTo<false>;
+    background: Attribute.Enumeration<["nein", "gr\u00FCn", "beige"]> & Attribute.DefaultTo<"nein">;
   };
 }
 
@@ -108,7 +108,7 @@ export interface ArticleSectionSectionStart extends Schema.Component {
   };
   attributes: {
     title: Attribute.String;
-    background: Attribute.Boolean & Attribute.Required & Attribute.DefaultTo<false>;
+    background: Attribute.Enumeration<["nein", "gr\u00FCn", "beige"]> & Attribute.DefaultTo<"nein">;
   };
 }
 
@@ -123,8 +123,8 @@ export interface ArticleSectionTextWithImageSection extends Schema.Component {
     text: Attribute.Blocks;
     images: Attribute.Media<"images" | "videos", true>;
     imagePosition: Attribute.Enumeration<["oben", "rechts", "links", "unten"]> & Attribute.Required & Attribute.DefaultTo<"rechts">;
-    background: Attribute.Boolean & Attribute.Required & Attribute.DefaultTo<false>;
     gallery: Attribute.Boolean & Attribute.Required & Attribute.DefaultTo<true>;
+    background: Attribute.Enumeration<["nein", "gr\u00FCn", "beige"]> & Attribute.DefaultTo<"nein">;
   };
 }
 
@@ -137,7 +137,7 @@ export interface ArticleSectionText extends Schema.Component {
   };
   attributes: {
     text: Attribute.Blocks;
-    background: Attribute.Boolean & Attribute.Required & Attribute.DefaultTo<false>;
+    background: Attribute.Enumeration<["nein", "gr\u00FCn", "beige"]> & Attribute.DefaultTo<"nein">;
   };
 }
 

@@ -30,15 +30,19 @@
       "default": "rechts",
       "required": true
     },
-    "background": {
-      "type": "boolean",
-      "default": false,
-      "required": true
-    },
     "gallery": {
       "type": "boolean",
       "default": true,
       "required": true
+    },
+    "background": {
+      "type": "enumeration",
+      "enum": [
+        "nein",
+        "grün",
+        "beige"
+      ],
+      "default": "nein"
     }
   }
 }

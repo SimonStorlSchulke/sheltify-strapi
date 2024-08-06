@@ -18,13 +18,17 @@
     "filteredAmount": {
       "type": "integer"
     },
-    "background": {
-      "type": "boolean",
-      "default": false,
-      "required": true
-    },
     "text": {
       "type": "blocks"
+    },
+    "background": {
+      "type": "enumeration",
+      "enum": [
+        "nein",
+        "grün",
+        "beige"
+      ],
+      "default": "nein"
     }
   }
 }

@@ -21,9 +21,13 @@
       "min": 1
     },
     "background": {
-      "type": "boolean",
-      "default": false,
-      "required": true
+      "type": "enumeration",
+      "enum": [
+        "nein",
+        "grün",
+        "beige"
+      ],
+      "default": "nein"
     }
   }
 }
