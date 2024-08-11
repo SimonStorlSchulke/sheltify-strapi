@@ -11,11 +11,11 @@
       "type": "integer",
       "max": 4,
       "min": 1,
-      "default": 6
+      "default": 3
     },
     "textCentered": {
       "type": "boolean",
-      "default": true,
+      "default": false,
       "required": true
     },
     "background": {

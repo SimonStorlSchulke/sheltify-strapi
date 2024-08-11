@@ -94,8 +94,8 @@ export interface ArticleSectionRowStart extends Schema.Component {
         },
         number
       > &
-      Attribute.DefaultTo<6>;
-    textCentered: Attribute.Boolean & Attribute.Required & Attribute.DefaultTo<true>;
+      Attribute.DefaultTo<3>;
+    textCentered: Attribute.Boolean & Attribute.Required & Attribute.DefaultTo<false>;
     background: Attribute.Enumeration<["nein", "gr\u00FCn", "beige"]> & Attribute.DefaultTo<"nein">;
   };
 }
