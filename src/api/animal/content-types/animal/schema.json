@@ -82,6 +82,9 @@
       "type": "integer",
       "default": 0,
       "required": true
+    },
+    "weightKg": {
+      "type": "decimal"
     }
   }
 }

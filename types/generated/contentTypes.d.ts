@@ -646,6 +646,7 @@ export interface ApiAnimalAnimal extends Schema.CollectionType {
     paten: Attribute.String;
     whereInGermany: Attribute.String;
     priority: Attribute.Integer & Attribute.Required & Attribute.DefaultTo<0>;
+    weightKg: Attribute.Decimal;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
