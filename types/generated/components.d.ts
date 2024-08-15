@@ -78,6 +78,17 @@ export interface ArticleSectionNewsCards extends Schema.Component {
   };
 }
 
+export interface ArticleSectionPaypalButton extends Schema.Component {
+  collectionName: "components_article_section_paypal_buttons";
+  info: {
+    displayName: "paypal-button";
+    icon: "handHeart";
+  };
+  attributes: {
+    background: Attribute.Enumeration<["nein", "gr\u00FCn", "beige"]> & Attribute.Required & Attribute.DefaultTo<"nein">;
+  };
+}
+
 export interface ArticleSectionRowStart extends Schema.Component {
   collectionName: "components_article_section_row_starts";
   info: {
@@ -149,6 +160,7 @@ declare module "@strapi/types" {
       "article-section.hero": ArticleSectionHero;
       "article-section.image": ArticleSectionImage;
       "article-section.news-cards": ArticleSectionNewsCards;
+      "article-section.paypal-button": ArticleSectionPaypalButton;
       "article-section.row-start": ArticleSectionRowStart;
       "article-section.section-start": ArticleSectionSectionStart;
       "article-section.text-with-image-section": ArticleSectionTextWithImageSection;

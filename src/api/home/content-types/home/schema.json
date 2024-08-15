@@ -23,7 +23,8 @@
         "article-section.button-link",
         "article-section.row-start",
         "article-section.section-start",
-        "article-section.news-cards"
+        "article-section.news-cards",
+        "article-section.paypal-button"
       ],
       "required": true
     },

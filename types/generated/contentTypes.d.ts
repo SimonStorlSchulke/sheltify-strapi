@@ -602,7 +602,8 @@ export interface ApiAboutPageAboutPage extends Schema.SingleType {
         "article-section.animal-cards",
         "article-section.button-link",
         "article-section.row-start",
-        "article-section.section-start"
+        "article-section.section-start",
+        "article-section.paypal-button"
       ]
     > &
       Attribute.Required;
@@ -769,7 +770,8 @@ export interface ApiContactPageContactPage extends Schema.SingleType {
         "article-section.row-start",
         "article-section.text-with-image-section",
         "article-section.text",
-        "article-section.section-start"
+        "article-section.section-start",
+        "article-section.paypal-button"
       ]
     >;
     mail: Attribute.String;
@@ -806,7 +808,8 @@ export interface ApiConveyConvey extends Schema.SingleType {
         "article-section.row-start",
         "article-section.section-start",
         "article-section.text-with-image-section",
-        "article-section.text"
+        "article-section.text",
+        "article-section.paypal-button"
       ]
     > &
       Attribute.Required;
@@ -841,7 +844,8 @@ export interface ApiConveySubpageConveySubpage extends Schema.CollectionType {
         "article-section.row-start",
         "article-section.section-start",
         "article-section.text-with-image-section",
-        "article-section.text"
+        "article-section.text",
+        "article-section.paypal-button"
       ]
     >;
     urlName: Attribute.String & Attribute.Required;
@@ -875,7 +879,8 @@ export interface ApiDogsPageDogsPage extends Schema.SingleType {
         "article-section.row-start",
         "article-section.text-with-image-section",
         "article-section.text",
-        "article-section.section-start"
+        "article-section.section-start",
+        "article-section.paypal-button"
       ]
     >;
     createdAt: Attribute.DateTime;
@@ -930,7 +935,8 @@ export interface ApiHelpPageHelpPage extends Schema.SingleType {
         "article-section.row-start",
         "article-section.text-with-image-section",
         "article-section.text",
-        "article-section.section-start"
+        "article-section.section-start",
+        "article-section.paypal-button"
       ]
     >;
     createdAt: Attribute.DateTime;
@@ -964,7 +970,8 @@ export interface ApiHelpSubpageHelpSubpage extends Schema.CollectionType {
         "article-section.row-start",
         "article-section.section-start",
         "article-section.text-with-image-section",
-        "article-section.text"
+        "article-section.text",
+        "article-section.paypal-button"
       ]
     >;
     urlName: Attribute.String & Attribute.Required;
@@ -998,7 +1005,8 @@ export interface ApiHomeHome extends Schema.SingleType {
         "article-section.button-link",
         "article-section.row-start",
         "article-section.section-start",
-        "article-section.news-cards"
+        "article-section.news-cards",
+        "article-section.paypal-button"
       ]
     > &
       Attribute.Required;
@@ -1054,7 +1062,8 @@ export interface ApiNewsPageNewsPage extends Schema.SingleType {
         "article-section.row-start",
         "article-section.text-with-image-section",
         "article-section.text",
-        "article-section.section-start"
+        "article-section.section-start",
+        "article-section.paypal-button"
       ]
     >;
     createdAt: Attribute.DateTime;
