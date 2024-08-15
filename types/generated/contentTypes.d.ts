@@ -1083,6 +1083,7 @@ export interface ApiTeammemberTeammember extends Schema.CollectionType {
     image: Attribute.Media<"images">;
     mail: Attribute.Email;
     phone: Attribute.String;
+    priority: Attribute.Integer & Attribute.Required & Attribute.DefaultTo<0>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
