@@ -35,6 +35,11 @@
       "allowedTypes": [
         "images"
       ]
+    },
+    "castrationCounter": {
+      "type": "integer",
+      "default": 0,
+      "required": true
     }
   }
 }
