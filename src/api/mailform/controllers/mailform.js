@@ -16,7 +16,7 @@ module.exports = {
       await strapi.plugins['email'].services.email.send({
         to: 'kontakt@herzenshunde-griechenland.de',
         from: 'kontakt@herzenshunde-griechenland.de',
-        subject: 'The Strapi Email plugin worked successfully 2',
+        subject: ctx.request.body.subject,
         html: ctx.request.body.content,
       });
       ctx.response.status = 200;
