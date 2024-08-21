@@ -1651,7 +1651,7 @@
     sharp "0.32.6"
     yup "0.32.9"
 
-"@strapi/plugin-users-permissions@4.25.0":
+"@strapi/plugin-users-permissions@^4.25.0":
   version "4.25.0"
   resolved "https://registry.npmjs.org/@strapi/plugin-users-permissions/-/plugin-users-permissions-4.25.0.tgz"
   integrity sha512-4I20YTZHZjEtoFDVzVdO3JWpJddrYrg8EM0I+KEKJBivP+kWH06K02mN0jlAyH6hirreAQ3MA65oWtv0FokStw==

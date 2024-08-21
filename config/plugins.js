@@ -28,5 +28,14 @@ module.exports = ({env}) => ({
           defaultReplyTo: env('SENDGRID_DEFAULT_TO'),
         },
       },
+    },
+    'users-permissions': {
+    config: {
+      ratelimit: {
+        // 1 mail every 55min allowed
+        interval: 300000,
+        max: 1
+      }
     }
+  }
 });

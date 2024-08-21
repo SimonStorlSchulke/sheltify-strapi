@@ -6,7 +6,7 @@ module.exports = {
         handler: 'mailform.customPostAction',
         config: {
           policies: [],
-          middlewares: [],
+          middlewares: ['plugin::users-permissions.rateLimit'],
         },
       },
     ],
