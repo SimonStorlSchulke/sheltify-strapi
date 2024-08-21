@@ -24,7 +24,8 @@
         "article-section.row-start",
         "article-section.section-start",
         "article-section.news-cards",
-        "article-section.paypal-button"
+        "article-section.paypal-button",
+        "article-section.counter"
       ],
       "required": true
     },
@@ -35,11 +36,6 @@
       "allowedTypes": [
         "images"
       ]
-    },
-    "castrationCounter": {
-      "type": "integer",
-      "default": 0,
-      "required": true
     }
   }
 }

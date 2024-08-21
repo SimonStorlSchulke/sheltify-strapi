@@ -1349,14 +1349,12 @@ export interface ApiHomeHome extends Schema.SingleType {
         'article-section.row-start',
         'article-section.section-start',
         'article-section.news-cards',
-        'article-section.paypal-button'
+        'article-section.paypal-button',
+        'article-section.counter'
       ]
     > &
       Attribute.Required;
     hero: Attribute.Media<'images'>;
-    castrationCounter: Attribute.Integer &
-      Attribute.Required &
-      Attribute.DefaultTo<0>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

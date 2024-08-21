@@ -39,6 +39,19 @@ export interface ArticleSectionButtonLink extends Schema.Component {
   };
 }
 
+export interface ArticleSectionCounter extends Schema.Component {
+  collectionName: 'components_article_section_counters';
+  info: {
+    displayName: 'counter';
+    icon: 'plus';
+  };
+  attributes: {
+    title: Attribute.String;
+    subtitle: Attribute.String;
+    counter: Attribute.Integer & Attribute.Required & Attribute.DefaultTo<0>;
+  };
+}
+
 export interface ArticleSectionHero extends Schema.Component {
   collectionName: 'components_article_section_heroes';
   info: {
@@ -179,6 +192,7 @@ declare module '@strapi/types' {
     export interface Components {
       'article-section.animal-cards': ArticleSectionAnimalCards;
       'article-section.button-link': ArticleSectionButtonLink;
+      'article-section.counter': ArticleSectionCounter;
       'article-section.hero': ArticleSectionHero;
       'article-section.image': ArticleSectionImage;
       'article-section.news-cards': ArticleSectionNewsCards;
