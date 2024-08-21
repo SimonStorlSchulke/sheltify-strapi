@@ -6,7 +6,6 @@
 
 module.exports = {
   async customPostAction(ctx) {
-    console.log("sent mail from IP ", ctx.ip);
     if(ctx.request.body.isTest) {
       console.log("would send mail:", ctx.request.body.content);
       ctx.response.status = 200;
@@ -18,7 +17,7 @@ module.exports = {
         to: 'kontakt@herzenshunde-griechenland.de',
         from: 'kontakt@herzenshunde-griechenland.de',
         subject: 'The Strapi Email plugin worked successfully 2',
-        html: '<strong>Hello world!</strong>' + ctx.request.body,
+        html: ctx.request.body.content,
       });
       ctx.response.status = 200;
     } catch {
