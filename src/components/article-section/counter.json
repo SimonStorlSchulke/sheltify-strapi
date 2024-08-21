@@ -2,7 +2,8 @@
   "collectionName": "components_article_section_counters",
   "info": {
     "displayName": "counter",
-    "icon": "plus"
+    "icon": "plus",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -16,6 +17,16 @@
       "type": "integer",
       "required": true,
       "default": 0
+    },
+    "background": {
+      "type": "enumeration",
+      "enum": [
+        "nein",
+        "grün",
+        "beige"
+      ],
+      "default": "nein",
+      "required": true
     }
   }
 }

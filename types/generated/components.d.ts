@@ -44,11 +44,15 @@ export interface ArticleSectionCounter extends Schema.Component {
   info: {
     displayName: 'counter';
     icon: 'plus';
+    description: '';
   };
   attributes: {
     title: Attribute.String;
     subtitle: Attribute.String;
     counter: Attribute.Integer & Attribute.Required & Attribute.DefaultTo<0>;
+    background: Attribute.Enumeration<['nein', 'gr\u00FCn', 'beige']> &
+      Attribute.Required &
+      Attribute.DefaultTo<'nein'>;
   };
 }
 
