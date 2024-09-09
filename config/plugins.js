@@ -32,8 +32,8 @@ module.exports = ({env}) => ({
     'users-permissions': {
     config: {
       ratelimit: {
-        // 1 mail every 55min allowed
-        interval: 300000,
+        // 1 mail every 5sec allowed
+        interval: 5000,
         max: 1
       }
     }
