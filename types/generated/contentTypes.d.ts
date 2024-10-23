@@ -1004,7 +1004,7 @@ export interface ApiBlogBlog extends Schema.CollectionType {
     > &
       Attribute.Required;
     description: Attribute.Text & Attribute.Required;
-    type: Attribute.Enumeration<['news', 'wissen', 'blog']>;
+    type: Attribute.Enumeration<['news', 'wissen', 'helferbericht', 'blog']>;
     thumbnail: Attribute.Media<'images'> & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
