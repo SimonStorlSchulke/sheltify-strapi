@@ -875,6 +875,10 @@ export interface ApiAnimalAnimal extends Schema.CollectionType {
     whereInGermany: Attribute.String;
     priority: Attribute.Integer & Attribute.Required & Attribute.DefaultTo<0>;
     weightKg: Attribute.Decimal;
+    status: Attribute.Enumeration<
+      ['vermittelbar', 'unvermittelbar', 'vermittelt']
+    > &
+      Attribute.DefaultTo<'vermittelbar'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1006,6 +1010,7 @@ export interface ApiBlogBlog extends Schema.CollectionType {
     description: Attribute.Text & Attribute.Required;
     type: Attribute.Enumeration<['news', 'wissen', 'helferbericht', 'blog']>;
     thumbnail: Attribute.Media<'images'> & Attribute.Required;
+    showAsPopup: Attribute.Boolean & Attribute.DefaultTo<false>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

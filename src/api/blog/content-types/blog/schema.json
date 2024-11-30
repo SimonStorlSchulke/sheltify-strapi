@@ -51,6 +51,11 @@
       "allowedTypes": [
         "images"
       ]
+    },
+    "showAsPopup": {
+      "type": "boolean",
+      "default": false,
+      "required": false
     }
   }
 }

@@ -85,6 +85,15 @@
     },
     "weightKg": {
       "type": "decimal"
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "vermittelbar",
+        "unvermittelbar",
+        "vermittelt"
+      ],
+      "default": "vermittelbar"
     }
   }
 }
