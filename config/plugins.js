@@ -7,9 +7,6 @@ module.exports = ({env}) => ({
           notificationProviders: []
         },
     },
-    'drag-drop-content-types': {
-      enabled: true
-    },
     upload: {
       config: {
         breakpoints: {

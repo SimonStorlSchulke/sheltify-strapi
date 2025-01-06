@@ -89,15 +89,11 @@
     "status": {
       "type": "enumeration",
       "enum": [
-        "in-spaichingen",
-        "in-bulgarien",
-        "vermittlungshilfe",
-        "zuhause-gefunden",
-        "vermisst",
-        "fundtier"
+        "vermittelbar",
+        "unvermittelbar",
+        "vermittelt"
       ],
-      "default": "in-spaichingen",
-      "required": true
+      "default": "vermittelbar"
     }
   }
 }
