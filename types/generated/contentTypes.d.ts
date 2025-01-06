@@ -876,9 +876,17 @@ export interface ApiAnimalAnimal extends Schema.CollectionType {
     priority: Attribute.Integer & Attribute.Required & Attribute.DefaultTo<0>;
     weightKg: Attribute.Decimal;
     status: Attribute.Enumeration<
-      ['vermittelbar', 'unvermittelbar', 'vermittelt']
+      [
+        'in-spaichingen',
+        'in-bulgarien',
+        'vermittlungshilfe',
+        'zuhause-gefunden',
+        'vermisst',
+        'fundtier'
+      ]
     > &
-      Attribute.DefaultTo<'vermittelbar'>;
+      Attribute.Required &
+      Attribute.DefaultTo<'in-spaichingen'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -956,12 +964,28 @@ export interface ApiAnimalKindAnimalKind extends Schema.CollectionType {
     draftAndPublish: false;
   };
   attributes: {
-    name: Attribute.String & Attribute.Required;
+    name: Attribute.String & Attribute.Required & Attribute.Unique;
     icon: Attribute.Media<'images'> & Attribute.Required;
     animals: Attribute.Relation<
       'api::animal-kind.animal-kind',
       'oneToMany',
       'api::animal.animal'
+    >;
+    namePlural: Attribute.String & Attribute.Required & Attribute.Unique;
+    article: Attribute.DynamicZone<
+      [
+        'article-section.animal-cards',
+        'article-section.button-link',
+        'article-section.counter',
+        'article-section.hero',
+        'article-section.image',
+        'article-section.news-cards',
+        'article-section.paypal-button',
+        'article-section.row-start',
+        'article-section.section-start',
+        'article-section.text-with-image-section',
+        'article-section.text'
+      ]
     >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
@@ -1445,6 +1469,87 @@ export interface ApiNewsPageNewsPage extends Schema.SingleType {
   };
 }
 
+export interface ApiNewsletterNewsletter extends Schema.CollectionType {
+  collectionName: 'newsletters';
+  info: {
+    singularName: 'newsletter';
+    pluralName: 'newsletters';
+    displayName: 'Newsletter';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    date: Attribute.Date & Attribute.Required;
+    file: Attribute.Media<'files'> & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::newsletter.newsletter',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::newsletter.newsletter',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiPagePage extends Schema.CollectionType {
+  collectionName: 'pages';
+  info: {
+    singularName: 'page';
+    pluralName: 'pages';
+    displayName: 'Seite';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    article: Attribute.DynamicZone<
+      [
+        'article-section.animal-cards',
+        'article-section.button-link',
+        'article-section.counter',
+        'article-section.hero',
+        'article-section.image',
+        'article-section.news-cards',
+        'article-section.paypal-button',
+        'article-section.row-start',
+        'article-section.section-start',
+        'article-section.text-with-image-section',
+        'article-section.text'
+      ]
+    > &
+      Attribute.Required;
+    description: Attribute.Text & Attribute.Required;
+    name: Attribute.String;
+    header: Attribute.Media<'images' | 'files' | 'videos' | 'audios', true>;
+    path: Attribute.String &
+      Attribute.Unique &
+      Attribute.SetMinMaxLength<{
+        maxLength: 200;
+      }>;
+    createNavigationMenuEntry: Attribute.Boolean &
+      Attribute.Required &
+      Attribute.DefaultTo<true>;
+    rank: Attribute.Integer;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<'api::page.page', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<'api::page.page', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+  };
+}
+
 export interface ApiTeammemberTeammember extends Schema.CollectionType {
   collectionName: 'teammembers';
   info: {
@@ -1515,6 +1620,8 @@ declare module '@strapi/types' {
       'api::home.home': ApiHomeHome;
       'api::imprint.imprint': ApiImprintImprint;
       'api::news-page.news-page': ApiNewsPageNewsPage;
+      'api::newsletter.newsletter': ApiNewsletterNewsletter;
+      'api::page.page': ApiPagePage;
       'api::teammember.teammember': ApiTeammemberTeammember;
     }
   }

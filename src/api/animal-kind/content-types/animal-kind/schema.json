@@ -14,7 +14,8 @@
   "attributes": {
     "name": {
       "type": "string",
-      "required": true
+      "required": true,
+      "unique": true
     },
     "icon": {
       "type": "media",
@@ -29,6 +30,27 @@
       "relation": "oneToMany",
       "target": "api::animal.animal",
       "mappedBy": "animalKind"
+    },
+    "namePlural": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "article": {
+      "type": "dynamiczone",
+      "components": [
+        "article-section.animal-cards",
+        "article-section.button-link",
+        "article-section.counter",
+        "article-section.hero",
+        "article-section.image",
+        "article-section.news-cards",
+        "article-section.paypal-button",
+        "article-section.row-start",
+        "article-section.section-start",
+        "article-section.text-with-image-section",
+        "article-section.text"
+      ]
     }
   }
 }
