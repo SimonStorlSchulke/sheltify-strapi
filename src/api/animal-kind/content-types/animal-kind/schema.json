@@ -29,6 +29,9 @@
       "relation": "oneToMany",
       "target": "api::animal.animal",
       "mappedBy": "animalKind"
+    },
+    "namePlural": {
+      "type": "string"
     }
   }
 }

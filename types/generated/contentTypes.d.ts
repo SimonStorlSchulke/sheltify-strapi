@@ -963,6 +963,7 @@ export interface ApiAnimalKindAnimalKind extends Schema.CollectionType {
       'oneToMany',
       'api::animal.animal'
     >;
+    namePlural: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
