@@ -191,6 +191,18 @@ export interface ArticleSectionText extends Schema.Component {
   };
 }
 
+export interface SingleTypesSponsor extends Schema.Component {
+  collectionName: 'components_single_types_sponsors';
+  info: {
+    displayName: 'sponsor';
+  };
+  attributes: {
+    name: Attribute.String & Attribute.Required;
+    description: Attribute.String;
+    icon: Attribute.Media<'images'>;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
@@ -205,6 +217,7 @@ declare module '@strapi/types' {
       'article-section.section-start': ArticleSectionSectionStart;
       'article-section.text-with-image-section': ArticleSectionTextWithImageSection;
       'article-section.text': ArticleSectionText;
+      'single-types.sponsor': SingleTypesSponsor;
     }
   }
 }

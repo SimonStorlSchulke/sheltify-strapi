@@ -876,9 +876,18 @@ export interface ApiAnimalAnimal extends Schema.CollectionType {
     priority: Attribute.Integer & Attribute.Required & Attribute.DefaultTo<0>;
     weightKg: Attribute.Decimal;
     status: Attribute.Enumeration<
-      ['vermittelbar', 'unvermittelbar', 'vermittelt']
+      [
+        'in-spaichingen',
+        'in-rum\u00E4nien',
+        'vermittlungshilfe',
+        'zuhause-gefunden',
+        'vermisst',
+        'fundtier'
+      ]
     > &
-      Attribute.DefaultTo<'vermittelbar'>;
+      Attribute.DefaultTo<'in-spaichingen'>;
+    race: Attribute.String;
+    freeRoamer: Attribute.Boolean;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1204,6 +1213,39 @@ export interface ApiDogsPageDogsPage extends Schema.SingleType {
   };
 }
 
+export interface ApiEinstellungenTiereEinstellungenTiere
+  extends Schema.SingleType {
+  collectionName: 'einstellungen_tieres';
+  info: {
+    singularName: 'einstellungen-tiere';
+    pluralName: 'einstellungen-tieres';
+    displayName: 'Einstellungen Tiere';
+    description: '';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    imageLost: Attribute.Media<'images'> & Attribute.Required;
+    imageHomeFound: Attribute.Media<'images'> & Attribute.Required;
+    imageFound: Attribute.Media<'images'> & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::einstellungen-tiere.einstellungen-tiere',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::einstellungen-tiere.einstellungen-tiere',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiFooterBannerFooterBanner extends Schema.CollectionType {
   collectionName: 'footer_banners';
   info: {
@@ -1482,13 +1524,15 @@ export interface ApiPagePage extends Schema.CollectionType {
   info: {
     singularName: 'page';
     pluralName: 'pages';
-    displayName: 'Seite';
+    displayName: 'Seiten';
     description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
+    title: Attribute.String;
+    url: Attribute.String;
     article: Attribute.DynamicZone<
       [
         'article-section.animal-cards',
@@ -1503,26 +1547,58 @@ export interface ApiPagePage extends Schema.CollectionType {
         'article-section.text-with-image-section',
         'article-section.text'
       ]
-    > &
-      Attribute.Required;
-    description: Attribute.Text & Attribute.Required;
-    name: Attribute.String;
-    header: Attribute.Media<'images' | 'files' | 'videos' | 'audios', true>;
-    path: Attribute.String &
-      Attribute.Unique &
-      Attribute.SetMinMaxLength<{
-        maxLength: 200;
-      }>;
-    createNavigationMenuEntry: Attribute.Boolean &
-      Attribute.Required &
-      Attribute.DefaultTo<true>;
-    rank: Attribute.Integer;
+    >;
+    description: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<'api::page.page', 'oneToOne', 'admin::user'> &
       Attribute.Private;
     updatedBy: Attribute.Relation<'api::page.page', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+  };
+}
+
+export interface ApiSponsorSponsor extends Schema.SingleType {
+  collectionName: 'sponsors';
+  info: {
+    singularName: 'sponsor';
+    pluralName: 'sponsors';
+    displayName: 'sponsoren';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    sponsors: Attribute.DynamicZone<['single-types.sponsor']>;
+    article: Attribute.DynamicZone<
+      [
+        'article-section.button-link',
+        'article-section.hero',
+        'article-section.image',
+        'article-section.news-cards',
+        'article-section.paypal-button',
+        'article-section.row-start',
+        'article-section.section-start',
+        'article-section.text-with-image-section',
+        'article-section.text'
+      ]
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::sponsor.sponsor',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::sponsor.sponsor',
+      'oneToOne',
+      'admin::user'
+    > &
       Attribute.Private;
   };
 }
@@ -1536,19 +1612,19 @@ export interface ApiTeammemberTeammember extends Schema.CollectionType {
     description: '';
   };
   options: {
-    draftAndPublish: true;
+    draftAndPublish: false;
   };
   attributes: {
     name: Attribute.String & Attribute.Required;
-    role: Attribute.String & Attribute.Required;
-    description: Attribute.String & Attribute.Required;
+    role: Attribute.String;
+    description: Attribute.Text & Attribute.Required;
     image: Attribute.Media<'images'>;
     mail: Attribute.Email;
     phone: Attribute.String;
     priority: Attribute.Integer & Attribute.Required & Attribute.DefaultTo<0>;
+    ehrenamtlich: Attribute.Boolean & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
       'api::teammember.teammember',
       'oneToOne',
@@ -1591,6 +1667,7 @@ declare module '@strapi/types' {
       'api::convey.convey': ApiConveyConvey;
       'api::convey-subpage.convey-subpage': ApiConveySubpageConveySubpage;
       'api::dogs-page.dogs-page': ApiDogsPageDogsPage;
+      'api::einstellungen-tiere.einstellungen-tiere': ApiEinstellungenTiereEinstellungenTiere;
       'api::footer-banner.footer-banner': ApiFooterBannerFooterBanner;
       'api::help-page.help-page': ApiHelpPageHelpPage;
       'api::help-subpage.help-subpage': ApiHelpSubpageHelpSubpage;
@@ -1599,6 +1676,7 @@ declare module '@strapi/types' {
       'api::news-page.news-page': ApiNewsPageNewsPage;
       'api::newsletter.newsletter': ApiNewsletterNewsletter;
       'api::page.page': ApiPagePage;
+      'api::sponsor.sponsor': ApiSponsorSponsor;
       'api::teammember.teammember': ApiTeammemberTeammember;
     }
   }

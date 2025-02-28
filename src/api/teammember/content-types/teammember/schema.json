@@ -8,7 +8,7 @@
     "description": ""
   },
   "options": {
-    "draftAndPublish": true
+    "draftAndPublish": false
   },
   "pluginOptions": {},
   "attributes": {
@@ -18,10 +18,10 @@
     },
     "role": {
       "type": "string",
-      "required": true
+      "required": false
     },
     "description": {
-      "type": "string",
+      "type": "text",
       "required": true
     },
     "image": {
@@ -41,6 +41,10 @@
     "priority": {
       "type": "integer",
       "default": 0,
+      "required": true
+    },
+    "ehrenamtlich": {
+      "type": "boolean",
       "required": true
     }
   }
