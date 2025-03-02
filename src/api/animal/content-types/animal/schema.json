@@ -86,7 +86,7 @@
     "weightKg": {
       "type": "decimal"
     },
-    "status": {
+    "state": {
       "type": "enumeration",
       "enum": [
         "in-spaichingen",
