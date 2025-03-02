@@ -536,7 +536,7 @@ export interface ApiAnimalAnimal extends Struct.CollectionTypeSchema {
     publishedAt: Schema.Attribute.DateTime;
     race: Schema.Attribute.String;
     shoulderHeightCm: Schema.Attribute.Integer;
-    status: Schema.Attribute.Enumeration<
+    state: Schema.Attribute.Enumeration<
       [
         'in-spaichingen',
         'in-rum\u00E4nien',
