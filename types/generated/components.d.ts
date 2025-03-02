@@ -1,211 +1,216 @@
-import type { Schema, Attribute } from '@strapi/strapi';
+import type { Schema, Struct } from '@strapi/strapi';
 
-export interface ArticleSectionAnimalCards extends Schema.Component {
+export interface ArticleSectionAnimalCards extends Struct.ComponentSchema {
   collectionName: 'components_article_section_animal_cards';
   info: {
-    displayName: 'Tier-Karten';
     description: '';
+    displayName: 'Tier-Karten';
     icon: 'apps';
   };
   attributes: {
-    animals: Attribute.Relation<
-      'article-section.animal-cards',
-      'oneToMany',
-      'api::animal.animal'
-    >;
-    queryFilter: Attribute.String;
-    filteredAmount: Attribute.Integer;
-    text: Attribute.Blocks;
-    background: Attribute.Enumeration<['nein', 'gr\u00FCn', 'beige']> &
-      Attribute.DefaultTo<'nein'>;
+    animals: Schema.Attribute.Relation<'oneToMany', 'api::animal.animal'>;
+    background: Schema.Attribute.Enumeration<['nein', 'gr\u00FCn', 'beige']> &
+      Schema.Attribute.DefaultTo<'nein'>;
+    filteredAmount: Schema.Attribute.Integer;
+    queryFilter: Schema.Attribute.String;
+    text: Schema.Attribute.Blocks;
   };
 }
 
-export interface ArticleSectionButtonLink extends Schema.Component {
+export interface ArticleSectionButtonLink extends Struct.ComponentSchema {
   collectionName: 'components_article_section_button_links';
   info: {
+    description: '';
     displayName: 'buttonLink';
     icon: 'exit';
-    description: '';
   };
   attributes: {
-    text: Attribute.String & Attribute.Required;
-    link: Attribute.String & Attribute.Required;
-    type: Attribute.Enumeration<['primary', 'secondary', 'call-to-action']> &
-      Attribute.Required &
-      Attribute.DefaultTo<'primary'>;
-    background: Attribute.Enumeration<['nein', 'gr\u00FCn', 'beige']> &
-      Attribute.DefaultTo<'nein'>;
+    background: Schema.Attribute.Enumeration<['nein', 'gr\u00FCn', 'beige']> &
+      Schema.Attribute.DefaultTo<'nein'>;
+    link: Schema.Attribute.String & Schema.Attribute.Required;
+    text: Schema.Attribute.String & Schema.Attribute.Required;
+    type: Schema.Attribute.Enumeration<
+      ['primary', 'secondary', 'call-to-action']
+    > &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'primary'>;
   };
 }
 
-export interface ArticleSectionCounter extends Schema.Component {
+export interface ArticleSectionCounter extends Struct.ComponentSchema {
   collectionName: 'components_article_section_counters';
   info: {
+    description: '';
     displayName: 'counter';
     icon: 'plus';
-    description: '';
   };
   attributes: {
-    title: Attribute.String;
-    subtitle: Attribute.String;
-    counter: Attribute.Integer & Attribute.Required & Attribute.DefaultTo<0>;
-    background: Attribute.Enumeration<['nein', 'gr\u00FCn', 'beige']> &
-      Attribute.Required &
-      Attribute.DefaultTo<'nein'>;
+    background: Schema.Attribute.Enumeration<['nein', 'gr\u00FCn', 'beige']> &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'nein'>;
+    counter: Schema.Attribute.Integer &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<0>;
+    subtitle: Schema.Attribute.String;
+    title: Schema.Attribute.String;
   };
 }
 
-export interface ArticleSectionHero extends Schema.Component {
+export interface ArticleSectionHero extends Struct.ComponentSchema {
   collectionName: 'components_article_section_heroes';
   info: {
-    displayName: 'Bild \u00FCber ganze Breite';
     description: '';
+    displayName: 'Bild \u00FCber ganze Breite';
   };
   attributes: {
-    hero: Attribute.Media<'images'> & Attribute.Required;
+    hero: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
   };
 }
 
-export interface ArticleSectionImage extends Schema.Component {
+export interface ArticleSectionImage extends Struct.ComponentSchema {
   collectionName: 'components_article_section_images';
   info: {
-    displayName: 'Bild(er) oder Video';
     description: '';
+    displayName: 'Bild(er) oder Video';
     icon: 'picture';
   };
   attributes: {
-    images: Attribute.Media<'images' | 'videos', true>;
-    gallery: Attribute.Boolean &
-      Attribute.Required &
-      Attribute.DefaultTo<false>;
-    background: Attribute.Enumeration<['nein', 'gr\u00FCn', 'beige']> &
-      Attribute.DefaultTo<'nein'>;
+    background: Schema.Attribute.Enumeration<['nein', 'gr\u00FCn', 'beige']> &
+      Schema.Attribute.DefaultTo<'nein'>;
+    gallery: Schema.Attribute.Boolean &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<false>;
+    images: Schema.Attribute.Media<'images' | 'videos', true>;
   };
 }
 
-export interface ArticleSectionNewsCards extends Schema.Component {
+export interface ArticleSectionNewsCards extends Struct.ComponentSchema {
   collectionName: 'components_article_section_news_cards';
   info: {
-    displayName: 'NewsCards';
     description: '';
+    displayName: 'NewsCards';
   };
   attributes: {
-    type: Attribute.Enumeration<['news', 'blog']>;
-    amount: Attribute.Integer &
-      Attribute.Required &
-      Attribute.SetMinMax<
+    amount: Schema.Attribute.Integer &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMax<
         {
-          min: 1;
           max: 20;
+          min: 1;
         },
         number
       > &
-      Attribute.DefaultTo<3>;
-    background: Attribute.Enumeration<['nein', 'gr\u00FCn', 'beige']> &
-      Attribute.DefaultTo<'nein'>;
+      Schema.Attribute.DefaultTo<3>;
+    background: Schema.Attribute.Enumeration<['nein', 'gr\u00FCn', 'beige']> &
+      Schema.Attribute.DefaultTo<'nein'>;
+    type: Schema.Attribute.Enumeration<['news', 'blog']>;
   };
 }
 
-export interface ArticleSectionPaypalButton extends Schema.Component {
+export interface ArticleSectionPaypalButton extends Struct.ComponentSchema {
   collectionName: 'components_article_section_paypal_buttons';
   info: {
     displayName: 'paypal-button';
     icon: 'handHeart';
   };
   attributes: {
-    background: Attribute.Enumeration<['nein', 'gr\u00FCn', 'beige']> &
-      Attribute.Required &
-      Attribute.DefaultTo<'nein'>;
+    background: Schema.Attribute.Enumeration<['nein', 'gr\u00FCn', 'beige']> &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'nein'>;
   };
 }
 
-export interface ArticleSectionRowStart extends Schema.Component {
+export interface ArticleSectionRowStart extends Struct.ComponentSchema {
   collectionName: 'components_article_section_row_starts';
   info: {
-    displayName: 'Spalten';
     description: '';
+    displayName: 'Spalten';
     icon: 'apps';
   };
   attributes: {
-    columns: Attribute.Integer &
-      Attribute.SetMinMax<
+    background: Schema.Attribute.Enumeration<['nein', 'gr\u00FCn', 'beige']> &
+      Schema.Attribute.DefaultTo<'nein'>;
+    columns: Schema.Attribute.Integer &
+      Schema.Attribute.SetMinMax<
         {
-          min: 1;
           max: 4;
+          min: 1;
         },
         number
       > &
-      Attribute.DefaultTo<3>;
-    textCentered: Attribute.Boolean &
-      Attribute.Required &
-      Attribute.DefaultTo<false>;
-    background: Attribute.Enumeration<['nein', 'gr\u00FCn', 'beige']> &
-      Attribute.DefaultTo<'nein'>;
+      Schema.Attribute.DefaultTo<3>;
+    textCentered: Schema.Attribute.Boolean &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<false>;
   };
 }
 
-export interface ArticleSectionSectionStart extends Schema.Component {
+export interface ArticleSectionSectionStart extends Struct.ComponentSchema {
   collectionName: 'components_article_section_section_starts';
   info: {
+    description: '';
     displayName: 'Abschnitts-Beginn';
-    description: '';
   };
   attributes: {
-    title: Attribute.String;
-    background: Attribute.Enumeration<['nein', 'gr\u00FCn', 'beige']> &
-      Attribute.DefaultTo<'nein'>;
+    background: Schema.Attribute.Enumeration<['nein', 'gr\u00FCn', 'beige']> &
+      Schema.Attribute.DefaultTo<'nein'>;
+    title: Schema.Attribute.String;
   };
 }
 
-export interface ArticleSectionTextWithImageSection extends Schema.Component {
-  collectionName: 'components_article_section_text_with_image_sections';
-  info: {
-    displayName: ' Text mit Bild(ern) oder Video';
-    icon: 'picture';
-    description: '';
-  };
-  attributes: {
-    text: Attribute.Blocks;
-    images: Attribute.Media<'images' | 'videos', true>;
-    imagePosition: Attribute.Enumeration<['oben', 'rechts', 'links', 'unten']> &
-      Attribute.Required &
-      Attribute.DefaultTo<'rechts'>;
-    gallery: Attribute.Boolean & Attribute.Required & Attribute.DefaultTo<true>;
-    background: Attribute.Enumeration<['nein', 'gr\u00FCn', 'beige']> &
-      Attribute.DefaultTo<'nein'>;
-  };
-}
-
-export interface ArticleSectionText extends Schema.Component {
+export interface ArticleSectionText extends Struct.ComponentSchema {
   collectionName: 'components_article_section_texts';
   info: {
-    displayName: ' Text';
     description: '';
+    displayName: ' Text';
     icon: 'layer';
   };
   attributes: {
-    text: Attribute.Blocks;
-    background: Attribute.Enumeration<['nein', 'gr\u00FCn', 'beige']> &
-      Attribute.DefaultTo<'nein'>;
+    background: Schema.Attribute.Enumeration<['nein', 'gr\u00FCn', 'beige']> &
+      Schema.Attribute.DefaultTo<'nein'>;
+    text: Schema.Attribute.Blocks;
   };
 }
 
-export interface SingleTypesSponsor extends Schema.Component {
+export interface ArticleSectionTextWithImageSection
+  extends Struct.ComponentSchema {
+  collectionName: 'components_article_section_text_with_image_sections';
+  info: {
+    description: '';
+    displayName: ' Text mit Bild(ern) oder Video';
+    icon: 'picture';
+  };
+  attributes: {
+    background: Schema.Attribute.Enumeration<['nein', 'gr\u00FCn', 'beige']> &
+      Schema.Attribute.DefaultTo<'nein'>;
+    gallery: Schema.Attribute.Boolean &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<true>;
+    imagePosition: Schema.Attribute.Enumeration<
+      ['oben', 'rechts', 'links', 'unten']
+    > &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'rechts'>;
+    images: Schema.Attribute.Media<'images' | 'videos', true>;
+    text: Schema.Attribute.Blocks;
+  };
+}
+
+export interface SingleTypesSponsor extends Struct.ComponentSchema {
   collectionName: 'components_single_types_sponsors';
   info: {
     displayName: 'sponsor';
   };
   attributes: {
-    name: Attribute.String & Attribute.Required;
-    description: Attribute.String;
-    icon: Attribute.Media<'images'>;
+    description: Schema.Attribute.String;
+    icon: Schema.Attribute.Media<'images'>;
+    name: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
 
-declare module '@strapi/types' {
-  export module Shared {
-    export interface Components {
+declare module '@strapi/strapi' {
+  export module Public {
+    export interface ComponentSchemas {
       'article-section.animal-cards': ArticleSectionAnimalCards;
       'article-section.button-link': ArticleSectionButtonLink;
       'article-section.counter': ArticleSectionCounter;
@@ -215,8 +220,8 @@ declare module '@strapi/types' {
       'article-section.paypal-button': ArticleSectionPaypalButton;
       'article-section.row-start': ArticleSectionRowStart;
       'article-section.section-start': ArticleSectionSectionStart;
-      'article-section.text-with-image-section': ArticleSectionTextWithImageSection;
       'article-section.text': ArticleSectionText;
+      'article-section.text-with-image-section': ArticleSectionTextWithImageSection;
       'single-types.sponsor': SingleTypesSponsor;
     }
   }
