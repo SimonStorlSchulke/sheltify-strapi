@@ -379,6 +379,7 @@ export interface ApiAboutPageAboutPage extends Struct.SingleTypeSchema {
   };
   options: {
     draftAndPublish: true;
+    populateCreatorFields: true;
   };
   attributes: {
     article: Schema.Attribute.DynamicZone<
@@ -396,8 +397,7 @@ export interface ApiAboutPageAboutPage extends Struct.SingleTypeSchema {
     > &
       Schema.Attribute.Required;
     createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'>;
     hero: Schema.Attribute.Media<'images'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
@@ -407,8 +407,7 @@ export interface ApiAboutPageAboutPage extends Struct.SingleTypeSchema {
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'>;
   };
 }
 
@@ -497,6 +496,7 @@ export interface ApiAnimalAnimal extends Struct.CollectionTypeSchema {
   };
   options: {
     draftAndPublish: true;
+    populateCreatorFields: true;
   };
   attributes: {
     animal_article: Schema.Attribute.Relation<
@@ -510,8 +510,7 @@ export interface ApiAnimalAnimal extends Struct.CollectionTypeSchema {
     birthday: Schema.Attribute.Date;
     castrated: Schema.Attribute.Boolean;
     createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'>;
     description: Schema.Attribute.Text &
       Schema.Attribute.Required &
       Schema.Attribute.SetMinMaxLength<{
@@ -551,8 +550,7 @@ export interface ApiAnimalAnimal extends Struct.CollectionTypeSchema {
     thumbnail: Schema.Attribute.Media<'images'>;
     tolerating: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'>;
     weightKg: Schema.Attribute.Decimal;
     whereInGermany: Schema.Attribute.String;
   };
@@ -568,6 +566,7 @@ export interface ApiBlogBlog extends Struct.CollectionTypeSchema {
   };
   options: {
     draftAndPublish: true;
+    populateCreatorFields: true;
   };
   attributes: {
     artikel: Schema.Attribute.DynamicZone<
@@ -585,8 +584,7 @@ export interface ApiBlogBlog extends Struct.CollectionTypeSchema {
     > &
       Schema.Attribute.Required;
     createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'>;
     description: Schema.Attribute.Text & Schema.Attribute.Required;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::blog.blog'> &
@@ -599,8 +597,7 @@ export interface ApiBlogBlog extends Struct.CollectionTypeSchema {
       ['news', 'wissen', 'helferbericht', 'blog']
     >;
     updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'>;
   };
 }
 
@@ -614,6 +611,7 @@ export interface ApiContactPageContactPage extends Struct.SingleTypeSchema {
   };
   options: {
     draftAndPublish: true;
+    populateCreatorFields: true;
   };
   attributes: {
     article: Schema.Attribute.DynamicZone<
@@ -630,8 +628,7 @@ export interface ApiContactPageContactPage extends Struct.SingleTypeSchema {
       ]
     >;
     createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'>;
     hero: Schema.Attribute.Media<'images'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
@@ -643,8 +640,7 @@ export interface ApiContactPageContactPage extends Struct.SingleTypeSchema {
     phone: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'>;
   };
 }
 
@@ -659,6 +655,7 @@ export interface ApiConveySubpageConveySubpage
   };
   options: {
     draftAndPublish: true;
+    populateCreatorFields: true;
   };
   attributes: {
     article: Schema.Attribute.DynamicZone<
@@ -676,8 +673,7 @@ export interface ApiConveySubpageConveySubpage
       ]
     >;
     createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -687,8 +683,7 @@ export interface ApiConveySubpageConveySubpage
     name: Schema.Attribute.String & Schema.Attribute.Required;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'>;
     urlName: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
@@ -703,6 +698,7 @@ export interface ApiConveyConvey extends Struct.SingleTypeSchema {
   };
   options: {
     draftAndPublish: true;
+    populateCreatorFields: true;
   };
   attributes: {
     article: Schema.Attribute.DynamicZone<
@@ -721,8 +717,7 @@ export interface ApiConveyConvey extends Struct.SingleTypeSchema {
     > &
       Schema.Attribute.Required;
     createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'>;
     hero: Schema.Attribute.Media<'images'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
@@ -732,8 +727,7 @@ export interface ApiConveyConvey extends Struct.SingleTypeSchema {
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'>;
   };
 }
 
@@ -747,6 +741,7 @@ export interface ApiDogsPageDogsPage extends Struct.SingleTypeSchema {
   };
   options: {
     draftAndPublish: true;
+    populateCreatorFields: true;
   };
   attributes: {
     article: Schema.Attribute.DynamicZone<
@@ -763,8 +758,7 @@ export interface ApiDogsPageDogsPage extends Struct.SingleTypeSchema {
       ]
     >;
     createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'>;
     hero: Schema.Attribute.Media<'images'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
@@ -774,8 +768,7 @@ export interface ApiDogsPageDogsPage extends Struct.SingleTypeSchema {
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'>;
   };
 }
 
@@ -823,6 +816,7 @@ export interface ApiFooterBannerFooterBanner
   };
   options: {
     draftAndPublish: true;
+    populateCreatorFields: true;
   };
   attributes: {
     article: Schema.Attribute.DynamicZone<
@@ -834,8 +828,7 @@ export interface ApiFooterBannerFooterBanner
     >;
     background: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
     createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -844,8 +837,7 @@ export interface ApiFooterBannerFooterBanner
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'>;
   };
 }
 
@@ -859,6 +851,7 @@ export interface ApiHelpPageHelpPage extends Struct.SingleTypeSchema {
   };
   options: {
     draftAndPublish: true;
+    populateCreatorFields: true;
   };
   attributes: {
     article: Schema.Attribute.DynamicZone<
@@ -875,8 +868,7 @@ export interface ApiHelpPageHelpPage extends Struct.SingleTypeSchema {
       ]
     >;
     createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'>;
     hero: Schema.Attribute.Media<'images'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
@@ -886,8 +878,7 @@ export interface ApiHelpPageHelpPage extends Struct.SingleTypeSchema {
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'>;
   };
 }
 
@@ -901,6 +892,7 @@ export interface ApiHelpSubpageHelpSubpage extends Struct.CollectionTypeSchema {
   };
   options: {
     draftAndPublish: true;
+    populateCreatorFields: true;
   };
   attributes: {
     article: Schema.Attribute.DynamicZone<
@@ -918,8 +910,7 @@ export interface ApiHelpSubpageHelpSubpage extends Struct.CollectionTypeSchema {
       ]
     >;
     createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -929,8 +920,7 @@ export interface ApiHelpSubpageHelpSubpage extends Struct.CollectionTypeSchema {
     name: Schema.Attribute.String & Schema.Attribute.Required;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'>;
     urlName: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
@@ -945,6 +935,7 @@ export interface ApiHomeHome extends Struct.SingleTypeSchema {
   };
   options: {
     draftAndPublish: true;
+    populateCreatorFields: true;
   };
   attributes: {
     article: Schema.Attribute.DynamicZone<
@@ -964,16 +955,14 @@ export interface ApiHomeHome extends Struct.SingleTypeSchema {
     > &
       Schema.Attribute.Required;
     createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'>;
     hero: Schema.Attribute.Media<'images'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::home.home'> &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'>;
   };
 }
 
@@ -987,12 +976,12 @@ export interface ApiImprintImprint extends Struct.SingleTypeSchema {
   };
   options: {
     draftAndPublish: true;
+    populateCreatorFields: true;
   };
   attributes: {
     article: Schema.Attribute.DynamicZone<['article-section.text']>;
     createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -1001,8 +990,7 @@ export interface ApiImprintImprint extends Struct.SingleTypeSchema {
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'>;
   };
 }
 
@@ -1016,6 +1004,7 @@ export interface ApiNewsPageNewsPage extends Struct.SingleTypeSchema {
   };
   options: {
     draftAndPublish: true;
+    populateCreatorFields: true;
   };
   attributes: {
     article: Schema.Attribute.DynamicZone<
@@ -1032,8 +1021,7 @@ export interface ApiNewsPageNewsPage extends Struct.SingleTypeSchema {
       ]
     >;
     createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'>;
     hero: Schema.Attribute.Media<'images'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
@@ -1043,8 +1031,7 @@ export interface ApiNewsPageNewsPage extends Struct.SingleTypeSchema {
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'>;
   };
 }
 
@@ -1057,11 +1044,11 @@ export interface ApiNewsletterNewsletter extends Struct.CollectionTypeSchema {
   };
   options: {
     draftAndPublish: true;
+    populateCreatorFields: true;
   };
   attributes: {
     createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'>;
     date: Schema.Attribute.Date & Schema.Attribute.Required;
     file: Schema.Attribute.Media<'files'> & Schema.Attribute.Required;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
@@ -1072,8 +1059,7 @@ export interface ApiNewsletterNewsletter extends Struct.CollectionTypeSchema {
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'>;
   };
 }
 
@@ -1087,6 +1073,7 @@ export interface ApiPagePage extends Struct.CollectionTypeSchema {
   };
   options: {
     draftAndPublish: true;
+    populateCreatorFields: true;
   };
   attributes: {
     article: Schema.Attribute.DynamicZone<
@@ -1105,8 +1092,7 @@ export interface ApiPagePage extends Struct.CollectionTypeSchema {
       ]
     >;
     createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'>;
     description: Schema.Attribute.String;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::page.page'> &
@@ -1114,8 +1100,7 @@ export interface ApiPagePage extends Struct.CollectionTypeSchema {
     publishedAt: Schema.Attribute.DateTime;
     title: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'>;
     url: Schema.Attribute.String;
   };
 }
@@ -1130,6 +1115,7 @@ export interface ApiSponsorSponsor extends Struct.SingleTypeSchema {
   };
   options: {
     draftAndPublish: true;
+    populateCreatorFields: true;
   };
   attributes: {
     article: Schema.Attribute.DynamicZone<
@@ -1146,8 +1132,7 @@ export interface ApiSponsorSponsor extends Struct.SingleTypeSchema {
       ]
     >;
     createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -1157,8 +1142,7 @@ export interface ApiSponsorSponsor extends Struct.SingleTypeSchema {
     publishedAt: Schema.Attribute.DateTime;
     sponsors: Schema.Attribute.DynamicZone<['single-types.sponsor']>;
     updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'>;
   };
 }
 
