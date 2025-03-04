@@ -67,6 +67,21 @@ export interface ArticleSectionHero extends Struct.ComponentSchema {
   };
 }
 
+export interface ArticleSectionHtml extends Struct.ComponentSchema {
+  collectionName: 'components_article_section_htmls';
+  info: {
+    description: '';
+    displayName: 'html';
+    icon: 'code';
+  };
+  attributes: {
+    background: Schema.Attribute.Enumeration<['nein', 'gr\u00FCn', 'beige']> &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'nein'>;
+    html: Schema.Attribute.Text;
+  };
+}
+
 export interface ArticleSectionImage extends Struct.ComponentSchema {
   collectionName: 'components_article_section_images';
   info: {
@@ -215,6 +230,7 @@ declare module '@strapi/strapi' {
       'article-section.button-link': ArticleSectionButtonLink;
       'article-section.counter': ArticleSectionCounter;
       'article-section.hero': ArticleSectionHero;
+      'article-section.html': ArticleSectionHtml;
       'article-section.image': ArticleSectionImage;
       'article-section.news-cards': ArticleSectionNewsCards;
       'article-section.paypal-button': ArticleSectionPaypalButton;

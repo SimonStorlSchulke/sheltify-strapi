@@ -51,7 +51,7 @@ const config = {
   },
   translations: {
     de: {
-      "app.components.LeftMenu.navbrand.title": "Menschen für Tiere Admin",
+      "app.components.LeftMenu.navbrand.title": "Sheltify Admin",
     }
   }
 };
