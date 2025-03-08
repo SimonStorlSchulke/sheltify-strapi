@@ -8,8 +8,7 @@
     "description": ""
   },
   "options": {
-    "draftAndPublish": true,
-    "populateCreatorFields": true
+    "draftAndPublish": true
   },
   "pluginOptions": {},
   "attributes": {
@@ -28,7 +27,10 @@
         "article-section.image",
         "article-section.news-cards",
         "article-section.row-start",
-        "article-section.section-start"
+        "article-section.section-start",
+        "article-section.html",
+        "article-section.paypal-button",
+        "article-section.counter"
       ],
       "required": true
     },

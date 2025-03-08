@@ -379,7 +379,6 @@ export interface ApiAboutPageAboutPage extends Struct.SingleTypeSchema {
   };
   options: {
     draftAndPublish: true;
-    populateCreatorFields: true;
   };
   attributes: {
     article: Schema.Attribute.DynamicZone<
@@ -393,11 +392,15 @@ export interface ApiAboutPageAboutPage extends Struct.SingleTypeSchema {
         'article-section.row-start',
         'article-section.section-start',
         'article-section.paypal-button',
+        'article-section.html',
+        'article-section.counter',
+        'article-section.news-cards',
       ]
     > &
       Schema.Attribute.Required;
     createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'>;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
     hero: Schema.Attribute.Media<'images'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
@@ -407,7 +410,8 @@ export interface ApiAboutPageAboutPage extends Struct.SingleTypeSchema {
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'>;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
   };
 }
 
@@ -566,7 +570,6 @@ export interface ApiBlogBlog extends Struct.CollectionTypeSchema {
   };
   options: {
     draftAndPublish: true;
-    populateCreatorFields: true;
   };
   attributes: {
     artikel: Schema.Attribute.DynamicZone<
@@ -580,11 +583,15 @@ export interface ApiBlogBlog extends Struct.CollectionTypeSchema {
         'article-section.news-cards',
         'article-section.row-start',
         'article-section.section-start',
+        'article-section.html',
+        'article-section.paypal-button',
+        'article-section.counter',
       ]
     > &
       Schema.Attribute.Required;
     createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'>;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
     description: Schema.Attribute.Text & Schema.Attribute.Required;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::blog.blog'> &
@@ -597,7 +604,8 @@ export interface ApiBlogBlog extends Struct.CollectionTypeSchema {
       ['news', 'wissen', 'helferbericht', 'blog']
     >;
     updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'>;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
   };
 }
 
@@ -611,7 +619,6 @@ export interface ApiContactPageContactPage extends Struct.SingleTypeSchema {
   };
   options: {
     draftAndPublish: true;
-    populateCreatorFields: true;
   };
   attributes: {
     article: Schema.Attribute.DynamicZone<
@@ -625,10 +632,13 @@ export interface ApiContactPageContactPage extends Struct.SingleTypeSchema {
         'article-section.text',
         'article-section.section-start',
         'article-section.paypal-button',
+        'article-section.html',
+        'article-section.counter',
       ]
     >;
     createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'>;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
     hero: Schema.Attribute.Media<'images'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
@@ -640,7 +650,8 @@ export interface ApiContactPageContactPage extends Struct.SingleTypeSchema {
     phone: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'>;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
   };
 }
 
@@ -698,7 +709,6 @@ export interface ApiConveyConvey extends Struct.SingleTypeSchema {
   };
   options: {
     draftAndPublish: true;
-    populateCreatorFields: true;
   };
   attributes: {
     article: Schema.Attribute.DynamicZone<
@@ -713,11 +723,14 @@ export interface ApiConveyConvey extends Struct.SingleTypeSchema {
         'article-section.text-with-image-section',
         'article-section.text',
         'article-section.paypal-button',
+        'article-section.html',
+        'article-section.counter',
       ]
     > &
       Schema.Attribute.Required;
     createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'>;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
     hero: Schema.Attribute.Media<'images'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
@@ -727,7 +740,8 @@ export interface ApiConveyConvey extends Struct.SingleTypeSchema {
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'>;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
   };
 }
 
@@ -1006,7 +1020,6 @@ export interface ApiNewsPageNewsPage extends Struct.SingleTypeSchema {
   };
   options: {
     draftAndPublish: true;
-    populateCreatorFields: true;
   };
   attributes: {
     article: Schema.Attribute.DynamicZone<
@@ -1020,10 +1033,13 @@ export interface ApiNewsPageNewsPage extends Struct.SingleTypeSchema {
         'article-section.text',
         'article-section.section-start',
         'article-section.paypal-button',
+        'article-section.html',
+        'article-section.counter',
       ]
     >;
     createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'>;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
     hero: Schema.Attribute.Media<'images'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
@@ -1033,7 +1049,8 @@ export interface ApiNewsPageNewsPage extends Struct.SingleTypeSchema {
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'>;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
   };
 }
 
@@ -1119,7 +1136,6 @@ export interface ApiSponsorSponsor extends Struct.SingleTypeSchema {
   };
   options: {
     draftAndPublish: true;
-    populateCreatorFields: true;
   };
   attributes: {
     article: Schema.Attribute.DynamicZone<
@@ -1133,10 +1149,13 @@ export interface ApiSponsorSponsor extends Struct.SingleTypeSchema {
         'article-section.section-start',
         'article-section.text-with-image-section',
         'article-section.text',
+        'article-section.html',
+        'article-section.counter',
       ]
     >;
     createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'>;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -1146,7 +1165,8 @@ export interface ApiSponsorSponsor extends Struct.SingleTypeSchema {
     publishedAt: Schema.Attribute.DateTime;
     sponsors: Schema.Attribute.DynamicZone<['single-types.sponsor']>;
     updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'>;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
   };
 }
 
@@ -1643,7 +1663,6 @@ export interface PluginUsersPermissionsUser
   };
   options: {
     draftAndPublish: false;
-    timestamps: true;
   };
   attributes: {
     blocked: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
@@ -1663,6 +1682,7 @@ export interface PluginUsersPermissionsUser
       'plugin::users-permissions.user'
     > &
       Schema.Attribute.Private;
+    orga: Schema.Attribute.String;
     password: Schema.Attribute.Password &
       Schema.Attribute.Private &
       Schema.Attribute.SetMinMaxLength<{
