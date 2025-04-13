@@ -173,6 +173,20 @@ export interface ArticleSectionSectionStart extends Struct.ComponentSchema {
   };
 }
 
+export interface ArticleSectionTeammembers extends Struct.ComponentSchema {
+  collectionName: 'components_article_section_teammembers';
+  info: {
+    displayName: 'teammembers';
+    icon: 'emotionHappy';
+  };
+  attributes: {
+    teammitglieder: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::teammember.teammember'
+    >;
+  };
+}
+
 export interface ArticleSectionText extends Struct.ComponentSchema {
   collectionName: 'components_article_section_texts';
   info: {
@@ -236,6 +250,7 @@ declare module '@strapi/strapi' {
       'article-section.paypal-button': ArticleSectionPaypalButton;
       'article-section.row-start': ArticleSectionRowStart;
       'article-section.section-start': ArticleSectionSectionStart;
+      'article-section.teammembers': ArticleSectionTeammembers;
       'article-section.text': ArticleSectionText;
       'article-section.text-with-image-section': ArticleSectionTextWithImageSection;
       'single-types.sponsor': SingleTypesSponsor;

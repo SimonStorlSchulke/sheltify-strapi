@@ -395,6 +395,7 @@ export interface ApiAboutPageAboutPage extends Struct.SingleTypeSchema {
         'article-section.html',
         'article-section.counter',
         'article-section.news-cards',
+        'article-section.teammembers',
       ]
     > &
       Schema.Attribute.Required;
@@ -1108,6 +1109,7 @@ export interface ApiPagePage extends Struct.CollectionTypeSchema {
         'article-section.text-with-image-section',
         'article-section.text',
         'article-section.html',
+        'article-section.teammembers',
       ]
     >;
     createdAt: Schema.Attribute.DateTime;

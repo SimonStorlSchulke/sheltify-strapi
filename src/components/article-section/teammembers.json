@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_article_section_teammembers",
+  "info": {
+    "displayName": "teammembers",
+    "icon": "emotionHappy"
+  },
+  "options": {},
+  "attributes": {
+    "teammitglieder": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::teammember.teammember"
+    }
+  }
+}

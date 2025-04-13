@@ -34,7 +34,8 @@
         "article-section.paypal-button",
         "article-section.html",
         "article-section.counter",
-        "article-section.news-cards"
+        "article-section.news-cards",
+        "article-section.teammembers"
       ],
       "required": true
     }
