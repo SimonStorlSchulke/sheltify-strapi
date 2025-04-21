@@ -501,7 +501,6 @@ export interface ApiAnimalAnimal extends Struct.CollectionTypeSchema {
   };
   options: {
     draftAndPublish: true;
-    populateCreatorFields: true;
   };
   attributes: {
     animal_article: Schema.Attribute.Relation<
@@ -515,7 +514,8 @@ export interface ApiAnimalAnimal extends Struct.CollectionTypeSchema {
     birthday: Schema.Attribute.Date;
     castrated: Schema.Attribute.Boolean;
     createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'>;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
     description: Schema.Attribute.Text &
       Schema.Attribute.Required &
       Schema.Attribute.SetMinMaxLength<{
@@ -526,6 +526,10 @@ export interface ApiAnimalAnimal extends Struct.CollectionTypeSchema {
     freeRoamer: Schema.Attribute.Boolean;
     gender: Schema.Attribute.Enumeration<['male', 'female', 'other']> &
       Schema.Attribute.Required;
+    homeFoundArea: Schema.Attribute.Component<
+      'article-section.text-with-image-section',
+      true
+    >;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -555,7 +559,8 @@ export interface ApiAnimalAnimal extends Struct.CollectionTypeSchema {
     thumbnail: Schema.Attribute.Media<'images'>;
     tolerating: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'>;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
     weightKg: Schema.Attribute.Decimal;
     whereInGermany: Schema.Attribute.String;
   };

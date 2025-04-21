@@ -8,8 +8,7 @@
     "description": ""
   },
   "options": {
-    "draftAndPublish": true,
-    "populateCreatorFields": true
+    "draftAndPublish": true
   },
   "pluginOptions": {},
   "attributes": {
@@ -104,6 +103,11 @@
     },
     "freeRoamer": {
       "type": "boolean"
+    },
+    "homeFoundArea": {
+      "type": "component",
+      "repeatable": true,
+      "component": "article-section.text-with-image-section"
     }
   }
 }
