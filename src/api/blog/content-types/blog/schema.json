@@ -59,6 +59,11 @@
       "type": "boolean",
       "default": false,
       "required": false
+    },
+    "path": {
+      "type": "string",
+      "required": true,
+      "regex": "^[a-z-]+$"
     }
   }
 }

@@ -602,6 +602,7 @@ export interface ApiBlogBlog extends Struct.CollectionTypeSchema {
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::blog.blog'> &
       Schema.Attribute.Private;
+    path: Schema.Attribute.String & Schema.Attribute.Required;
     publishedAt: Schema.Attribute.DateTime;
     showAsPopup: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
     thumbnail: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
