@@ -63,7 +63,7 @@
     "path": {
       "type": "string",
       "required": true,
-      "regex": "^[a-z-]+$"
+      "regex": "^[a-z0-9-]+$"
     }
   }
 }

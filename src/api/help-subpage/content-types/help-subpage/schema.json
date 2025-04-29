@@ -34,7 +34,7 @@
     },
     "urlName": {
       "type": "string",
-      "regex": "^[a-z-]+$",
+      "regex": "^[a-z0-9-]+$",
       "required": true
     }
   }
