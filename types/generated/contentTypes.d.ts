@@ -1190,6 +1190,9 @@ export interface ApiTeammemberTeammember extends Struct.CollectionTypeSchema {
     draftAndPublish: false;
   };
   attributes: {
+    category: Schema.Attribute.Enumeration<
+      ['vorstand', 'ehrenamtlich', 'tierheim']
+    >;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;

@@ -46,6 +46,14 @@
     "ehrenamtlich": {
       "type": "boolean",
       "required": true
+    },
+    "category": {
+      "type": "enumeration",
+      "enum": [
+        "vorstand",
+        "ehrenamtlich",
+        "tierheim"
+      ]
     }
   }
 }
