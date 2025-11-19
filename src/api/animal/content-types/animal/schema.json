@@ -108,6 +108,9 @@
       "type": "component",
       "repeatable": true,
       "component": "article-section.text-with-image-section"
+    },
+    "patenGesucht": {
+      "type": "boolean"
     }
   }
 }

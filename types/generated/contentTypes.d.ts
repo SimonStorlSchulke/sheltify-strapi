@@ -538,6 +538,7 @@ export interface ApiAnimalAnimal extends Struct.CollectionTypeSchema {
       Schema.Attribute.Private;
     name: Schema.Attribute.String & Schema.Attribute.Required;
     paten: Schema.Attribute.String;
+    patenGesucht: Schema.Attribute.Boolean;
     priority: Schema.Attribute.Integer &
       Schema.Attribute.Required &
       Schema.Attribute.DefaultTo<0>;
