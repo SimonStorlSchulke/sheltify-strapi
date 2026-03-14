@@ -1094,6 +1094,7 @@ export interface ApiOrganisationsdatenOrganisationsdaten
   extends Struct.SingleTypeSchema {
   collectionName: 'organisationsdatens';
   info: {
+    description: '';
     displayName: 'Organisationsdaten';
     pluralName: 'organisationsdatens';
     singularName: 'organisationsdaten';
@@ -1107,6 +1108,7 @@ export interface ApiOrganisationsdatenOrganisationsdaten
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    email: Schema.Attribute.String;
     linkFacebook: Schema.Attribute.String;
     linkInstagram: Schema.Attribute.String;
     linkPaypal: Schema.Attribute.String;
