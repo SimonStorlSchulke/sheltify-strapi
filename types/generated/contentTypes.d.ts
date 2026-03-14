@@ -1090,6 +1090,40 @@ export interface ApiNewsletterNewsletter extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiOrganisationsdatenOrganisationsdaten
+  extends Struct.SingleTypeSchema {
+  collectionName: 'organisationsdatens';
+  info: {
+    displayName: 'Organisationsdaten';
+    pluralName: 'organisationsdatens';
+    singularName: 'organisationsdaten';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    adresse: Schema.Attribute.Text;
+    bankverbindung: Schema.Attribute.Text;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    linkFacebook: Schema.Attribute.String;
+    linkInstagram: Schema.Attribute.String;
+    linkPaypal: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::organisationsdaten.organisationsdaten'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    telefonnummer: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiPagePage extends Struct.CollectionTypeSchema {
   collectionName: 'pages';
   info: {
@@ -1746,6 +1780,7 @@ declare module '@strapi/strapi' {
       'api::imprint.imprint': ApiImprintImprint;
       'api::news-page.news-page': ApiNewsPageNewsPage;
       'api::newsletter.newsletter': ApiNewsletterNewsletter;
+      'api::organisationsdaten.organisationsdaten': ApiOrganisationsdatenOrganisationsdaten;
       'api::page.page': ApiPagePage;
       'api::sponsor.sponsor': ApiSponsorSponsor;
       'api::teammember.teammember': ApiTeammemberTeammember;

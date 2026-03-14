@@ -1,0 +1,32 @@
+{
+  "kind": "singleType",
+  "collectionName": "organisationsdatens",
+  "info": {
+    "singularName": "organisationsdaten",
+    "pluralName": "organisationsdatens",
+    "displayName": "Organisationsdaten"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "adresse": {
+      "type": "text"
+    },
+    "bankverbindung": {
+      "type": "text"
+    },
+    "telefonnummer": {
+      "type": "string"
+    },
+    "linkFacebook": {
+      "type": "string"
+    },
+    "linkInstagram": {
+      "type": "string"
+    },
+    "linkPaypal": {
+      "type": "string"
+    }
+  }
+}
