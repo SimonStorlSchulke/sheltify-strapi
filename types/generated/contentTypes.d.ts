@@ -1100,7 +1100,7 @@ export interface ApiOrganisationsdatenOrganisationsdaten
     singularName: 'organisationsdaten';
   };
   options: {
-    draftAndPublish: true;
+    draftAndPublish: false;
   };
   attributes: {
     adresse: Schema.Attribute.Text;
